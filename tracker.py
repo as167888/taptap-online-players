@@ -74,9 +74,13 @@ API_MODE = 'direct'
 
 def api_req_direct(full_path):
     """直连 API (MAC 签名)"""
+    # 补充 X-UA 参数
+    sep = '&' if '?' in full_path else '?'
+    fp = f'{full_path}{sep}X-UA={X_UA_ENC}'
+
     ts = str(int(time.time()))
     nonce = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(8))
-    p = urllib.parse.urlparse(full_path)
+    p = urllib.parse.urlparse(fp)
     ru = p.path
     if p.query:
         ru += '?' + p.query
@@ -87,7 +91,7 @@ def api_req_direct(full_path):
         'User-Agent': 'TapTap/2026.5.19-rel.5 (Build 2026051905/1d8a57a6) TapPC-Main/2026.5.19-rel.5',
         'Authorization': f'MAC id="{KID}",ts="{ts}",nonce="{nonce}",mac="{sig}"',
     }
-    return requests.get(f'https://{API_HOST}{full_path}', headers=headers, timeout=15)
+    return requests.get(f'https://{API_HOST}{fp}', headers=headers, timeout=15)
 
 
 PIPE_PATH = '\\\\.\\pipe\\tappc_cn_http'

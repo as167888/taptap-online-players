@@ -72,6 +72,16 @@ GAMES = [
 # 模式: 'direct' (MAC签名直连) 或 'pipe' (Windows 命名管道)
 API_MODE = 'direct'
 
+# 直连专用 session（跳过系统代理）
+_direct_session = None
+
+def _get_direct_session():
+    global _direct_session
+    if _direct_session is None:
+        _direct_session = requests.Session()
+        _direct_session.trust_env = False  # 忽略系统代理
+    return _direct_session
+
 def api_req_direct(full_path):
     """直连 API (MAC 签名)"""
     # 补充 X-UA 参数
@@ -91,7 +101,7 @@ def api_req_direct(full_path):
         'User-Agent': 'TapTap/2026.5.19-rel.5 (Build 2026051905/1d8a57a6) TapPC-Main/2026.5.19-rel.5',
         'Authorization': f'MAC id="{KID}",ts="{ts}",nonce="{nonce}",mac="{sig}"',
     }
-    return requests.get(f'https://{API_HOST}{fp}', headers=headers, timeout=15)
+    return _get_direct_session().get(f'https://{API_HOST}{fp}', headers=headers, timeout=15)
 
 
 PIPE_PATH = '\\\\.\\pipe\\tappc_cn_http'

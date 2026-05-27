@@ -1,0 +1,754 @@
+{
+  "data": {
+    "app": {
+      "id": 714119,
+      "identifier": "com.hottagames.yh.laohu",
+      "itunes_id": "6514281568",
+      "title": "异环",
+      "title_labels": [],
+      "icon": {
+        "url": "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon.jpg",
+        "medium_url": "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon_m.jpg",
+        "small_url": "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon_s.jpg",
+        "original_url": "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png",
+        "original_format": "png",
+        "width": 270,
+        "height": 270,
+        "color": "0x689996",
+        "original_size": 310278,
+        "large_url": "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon.jpg"
+      },
+      "price": {
+        "taptap_current": "",
+        "discount_rate": 0
+      },
+      "uri": {
+        "google": "",
+        "google_play": "",
+        "apple": "https://apps.apple.com/app/id6514281568?ct=Tap714119",
+        "download_site": "https://yh.wanmei.com/index.html?utm_source=TapTap&utm_medium=OfficialWebsite&utm_campaign=Android"
+      },
+      "update_date": "2026-04-21",
+      "style": 0,
+      "button_flag": 1,
+      "button_params": {},
+      "hidden_button": false,
+      "has_official": true,
+      "has_moment_rec": false,
+      "is_deny_minors": false,
+      "hints": [
+        "公测已正式开启"
+      ],
+      "download": {
+        "apk_id": 1020591,
+        "apk": {
+          "native_code": [
+            "arm64-v8a"
+          ],
+          "name": "com.hottagames.yh.laohu-3.apk",
+          "size": 940569985,
+          "md5": "bd35be4d02bcf0f9d2359c52b7b3d12c",
+          "version_code": 3,
+          "version_name": "1.0.2"
+        },
+        "apk_permissions": [
+          {
+            "label": "隐私敏感权限",
+            "data": [
+              {
+                "label": "读取你的SD卡中的内容",
+                "permission": "android.permission.READ_EXTERNAL_STORAGE",
+                "description": "允许应用读取您SD卡的内容。"
+              },
+              {
+                "label": "修改或删除你的SD卡中的内容",
+                "permission": "android.permission.WRITE_EXTERNAL_STORAGE",
+                "description": "允许写入SD卡。"
+              },
+              {
+                "label": "拍摄照片或视频",
+                "permission": "android.permission.CAMERA",
+                "description": "允许该应用使用相机拍摄照片和视频。此权限可让该应用可让该应用随时使用相机，而无需您的确认。"
+              },
+              {
+                "label": "与蓝牙设备配对",
+                "permission": "android.permission.BLUETOOTH",
+                "description": "允许该应用查看设备上的蓝牙配置，以及与配对设备建立连接或接受其连接请求。"
+              }
+            ]
+          },
+          {
+            "label": "常规权限",
+            "data": [
+              {
+                "label": "查看网络连接",
+                "permission": "android.permission.ACCESS_NETWORK_STATE",
+                "description": "允许该应用查看网络连接的相关信息，例如存在和连接的网络。"
+              },
+              {
+                "label": "查看WLAN连接",
+                "permission": "android.permission.ACCESS_WIFI_STATE",
+                "description": "允许该应用查看WLAN网络的相关信息，例如是否启用了WLAN以及连接的WLAN设备的名称。"
+              },
+              {
+                "label": "更改网络连接性",
+                "permission": "android.permission.CHANGE_NETWORK_STATE",
+                "description": "允许应用更改网络连接的状态。"
+              },
+              {
+                "label": "完全的网络访问权限",
+                "permission": "android.permission.INTERNET",
+                "description": "允许应用程序打开网络套接字。浏览器和其他某些应用提供了向互联网发送数据的途径，因此应用无需该权限即可向互联网发送数据。"
+              },
+              {
+                "label": "更改你的音频设置",
+                "permission": "android.permission.MODIFY_AUDIO_SETTINGS",
+                "description": "允许该应用修改全局音频设置，例如音量和用于输出的扬声器。"
+              },
+              {
+                "label": "运行前台服务",
+                "permission": "android.permission.FOREGROUND_SERVICE",
+                "description": "允许该应用使用前台服务。"
+              },
+              {
+                "label": "控制振动",
+                "permission": "android.permission.VIBRATE",
+                "description": "允许应用控制振动器。"
+              },
+              {
+                "label": "防止手机休眠",
+                "permission": "android.permission.WAKE_LOCK",
+                "description": "允许应用阻止设备进入休眠状态。"
+              },
+              {
+                "label": "请求安装文件包",
+                "permission": "android.permission.REQUEST_INSTALL_PACKAGES",
+                "description": "允许应用请求安装文件包。"
+              }
+            ]
+          }
+        ],
+        "api_level": 29,
+        "is_force": false,
+        "target_sdk_version": 30
+      },
+      "videos": [
+        {
+          "video_id": 5609890,
+          "thumbnail": {
+            "url": "https://img-tc.tapimg.com/video-picture/tid-69e06cad42e88fc2e06849f3/first.jpg/_tap_screenshot.jpg",
+            "medium_url": "https://img-tc.tapimg.com/video-picture/tid-69e06cad42e88fc2e06849f3/first.jpg/_tap_screenshot_m.jpg",
+            "small_url": "https://img-tc.tapimg.com/video-picture/tid-69e06cad42e88fc2e06849f3/first.jpg/_tap_screenshot_s.jpg",
+            "original_url": "https://img-tc.tapimg.com/video-picture/tid-69e06cad42e88fc2e06849f3/first.jpg",
+            "original_format": "jpeg",
+            "width": 1920,
+            "height": 1080,
+            "color": "0x2c4a73",
+            "original_size": 285277,
+            "large_url": "https://img-tc.tapimg.com/video-picture/tid-69e06cad42e88fc2e06849f3/first.jpg/_tap_screenshot.jpg"
+          },
+          "trace_log": {
+            "video_id": 5609890,
+            "subjectId": 714119,
+            "subjectType": "appDetail"
+          },
+          "play_log": {
+            "video_id": 5609890,
+            "paramId": 5609890,
+            "paramType": "videoDetail",
+            "subjectId": 714119,
+            "subjectType": "appDetail"
+          }
+        }
+      ],
+      "banner": {
+        "url": "https://img-tc.tapimg.com/market/images/62d29608c31eb7caaf231e18431a6d49.jpg/_tap_banner.jpg",
+        "medium_url": "https://img-tc.tapimg.com/market/images/62d29608c31eb7caaf231e18431a6d49.jpg/_tap_banner_m.jpg",
+        "small_url": "https://img-tc.tapimg.com/market/images/62d29608c31eb7caaf231e18431a6d49.jpg/_tap_banner_s.jpg",
+        "original_url": "https://img-tc.tapimg.com/market/images/62d29608c31eb7caaf231e18431a6d49.jpg",
+        "original_format": "jpeg",
+        "width": 1920,
+        "height": 1080,
+        "color": "0x737288",
+        "original_size": 2339159,
+        "large_url": "https://img-tc.tapimg.com/market/images/62d29608c31eb7caaf231e18431a6d49.jpg/_tap_banner_l.jpg"
+      },
+      "screenshots": [
+        {
+          "url": "https://img-tc.tapimg.com/market/images/2ad073f1cc0654de3235e73af446f7bf.jpg/_tap_screenshot.jpg",
+          "medium_url": "https://img-tc.tapimg.com/market/images/2ad073f1cc0654de3235e73af446f7bf.jpg/_tap_screenshot_m.jpg",
+          "small_url": "https://img-tc.tapimg.com/market/images/2ad073f1cc0654de3235e73af446f7bf.jpg/_tap_screenshot_s.jpg",
+          "original_url": "https://img-tc.tapimg.com/market/images/2ad073f1cc0654de3235e73af446f7bf.jpg",
+          "original_format": "jpeg",
+          "width": 1920,
+          "height": 1080,
+          "color": "0x726e85",
+          "original_size": 2300880,
+          "large_url": "https://img-tc.tapimg.com/market/images/2ad073f1cc0654de3235e73af446f7bf.jpg/_tap_screenshot.jpg"
+        },
+        {
+          "url": "https://img-tc.tapimg.com/market/images/0a9d0f9feaeebfaeac1a3ce8e927eaed.jpg/_tap_screenshot.jpg",
+          "medium_url": "https://img-tc.tapimg.com/market/images/0a9d0f9feaeebfaeac1a3ce8e927eaed.jpg/_tap_screenshot_m.jpg",
+          "small_url": "https://img-tc.tapimg.com/market/images/0a9d0f9feaeebfaeac1a3ce8e927eaed.jpg/_tap_screenshot_s.jpg",
+          "original_url": "https://img-tc.tapimg.com/market/images/0a9d0f9feaeebfaeac1a3ce8e927eaed.jpg",
+          "original_format": "jpeg",
+          "width": 1920,
+          "height": 1080,
+          "color": "0x3d6587",
+          "original_size": 1438416,
+          "large_url": "https://img-tc.tapimg.com/market/images/0a9d0f9feaeebfaeac1a3ce8e927eaed.jpg/_tap_screenshot.jpg"
+        },
+        {
+          "url": "https://img-tc.tapimg.com/market/images/9b616fb6ee99a45da3a1a387f92d9060.jpg/_tap_screenshot.jpg",
+          "medium_url": "https://img-tc.tapimg.com/market/images/9b616fb6ee99a45da3a1a387f92d9060.jpg/_tap_screenshot_m.jpg",
+          "small_url": "https://img-tc.tapimg.com/market/images/9b616fb6ee99a45da3a1a387f92d9060.jpg/_tap_screenshot_s.jpg",
+          "original_url": "https://img-tc.tapimg.com/market/images/9b616fb6ee99a45da3a1a387f92d9060.jpg",
+          "original_format": "jpeg",
+          "width": 1920,
+          "height": 1080,
+          "color": "0x736151",
+          "original_size": 1857650,
+          "large_url": "https://img-tc.tapimg.com/market/images/9b616fb6ee99a45da3a1a387f92d9060.jpg/_tap_screenshot.jpg"
+        },
+        {
+          "url": "https://img-tc.tapimg.com/market/images/4c46876403e459f27d41963834c04017.jpg/_tap_screenshot.jpg",
+          "medium_url": "https://img-tc.tapimg.com/market/images/4c46876403e459f27d41963834c04017.jpg/_tap_screenshot_m.jpg",
+          "small_url": "https://img-tc.tapimg.com/market/images/4c46876403e459f27d41963834c04017.jpg/_tap_screenshot_s.jpg",
+          "original_url": "https://img-tc.tapimg.com/market/images/4c46876403e459f27d41963834c04017.jpg",
+          "original_format": "jpeg",
+          "width": 1920,
+          "height": 1080,
+          "color": "0x3b5891",
+          "original_size": 1767909,
+          "large_url": "https://img-tc.tapimg.com/market/images/4c46876403e459f27d41963834c04017.jpg/_tap_screenshot.jpg"
+        },
+        {
+          "url": "https://img-tc.tapimg.com/market/images/fb1f7c3d9974344388ea9f15cb227519.jpg/_tap_screenshot.jpg",
+          "medium_url": "https://img-tc.tapimg.com/market/images/fb1f7c3d9974344388ea9f15cb227519.jpg/_tap_screenshot_m.jpg",
+          "small_url": "https://img-tc.tapimg.com/market/images/fb1f7c3d9974344388ea9f15cb227519.jpg/_tap_screenshot_s.jpg",
+          "original_url": "https://img-tc.tapimg.com/market/images/fb1f7c3d9974344388ea9f15cb227519.jpg",
+          "original_format": "jpeg",
+          "width": 1920,
+          "height": 1080,
+          "color": "0x785f68",
+          "original_size": 1295474,
+          "large_url": "https://img-tc.tapimg.com/market/images/fb1f7c3d9974344388ea9f15cb227519.jpg/_tap_screenshot.jpg"
+        },
+        {
+          "url": "https://img-tc.tapimg.com/market/images/a890ad19494a175f13bfdda4ad03db6c.jpg/_tap_screenshot.jpg",
+          "medium_url": "https://img-tc.tapimg.com/market/images/a890ad19494a175f13bfdda4ad03db6c.jpg/_tap_screenshot_m.jpg",
+          "small_url": "https://img-tc.tapimg.com/market/images/a890ad19494a175f13bfdda4ad03db6c.jpg/_tap_screenshot_s.jpg",
+          "original_url": "https://img-tc.tapimg.com/market/images/a890ad19494a175f13bfdda4ad03db6c.jpg",
+          "original_format": "jpeg",
+          "width": 1920,
+          "height": 1080,
+          "color": "0x6e6d86",
+          "original_size": 1700065,
+          "large_url": "https://img-tc.tapimg.com/market/images/a890ad19494a175f13bfdda4ad03db6c.jpg/_tap_screenshot.jpg"
+        },
+        {
+          "url": "https://img-tc.tapimg.com/market/images/09151ecd0e7e098dbf822940407ab1f9.jpg/_tap_screenshot.jpg",
+          "medium_url": "https://img-tc.tapimg.com/market/images/09151ecd0e7e098dbf822940407ab1f9.jpg/_tap_screenshot_m.jpg",
+          "small_url": "https://img-tc.tapimg.com/market/images/09151ecd0e7e098dbf822940407ab1f9.jpg/_tap_screenshot_s.jpg",
+          "original_url": "https://img-tc.tapimg.com/market/images/09151ecd0e7e098dbf822940407ab1f9.jpg",
+          "original_format": "jpeg",
+          "width": 1920,
+          "height": 1080,
+          "color": "0x585d73",
+          "original_size": 1489478,
+          "large_url": "https://img-tc.tapimg.com/market/images/09151ecd0e7e098dbf822940407ab1f9.jpg/_tap_screenshot.jpg"
+        }
+      ],
+      "whatsnew": {
+        "text": "<div>异环公测现已开启</div>"
+      },
+      "description": {
+        "text": "《异环》公测现已开启！《异环》是Hotta Studio自主研发的超自然都市开放世界RPG。故事将从海特洛市启篇，作为首位「无证上岗」的「异象猎人」，你将成为接取民间异象委托维持周转的古董店「伊波恩」的一员，与个性迥异、能力非凡的伙伴们一起探索各城市的大小谜团，历经有笑有泪的各式奇遇，演绎独属于你们的都市物语。"
+      },
+      "developer_note": {
+        "text": "大家好，我们是Hotta Studio工作室《异环》制作组。<br class=\"bbcode-paragraph-br\"/><br class=\"bbcode-paragraph-br\"/>作为一款超自然都市开放世界题材游戏，《异环》想要为玩家提供一个熟悉，又稍带陌生的舞台。在这个世界里有长着电视头的海獭，有午夜时分在街头暴走涂鸦的滑板，更有无数超越常识存在之外的异象。当然，你也能结识拥有各种异能的伙伴与搭档，一起解决即将发生的种种事件，逐渐了解并融入这个全新的超自然都市。<br class=\"bbcode-paragraph-br\"/><br class=\"bbcode-paragraph-br\"/>关于超自然都市开放世界的设计，我们在开发过程中也有很多感触，有几点是非常想说的。<br class=\"bbcode-paragraph-br\"/><br class=\"bbcode-paragraph-br\"/>首先，我们希望这个都市足够真实，所以我们去学习了如何做城市规划。不仅学习现实中的城市，学习已有的游戏设计，也去系统学习了城市规划学。我们希望这是一个“活着”的都市，店铺是有在经营的，街道上的行人车辆要有着各自目的地，街区也看起来是有不同风格和社区氛围的。<br class=\"bbcode-paragraph-br\"/><br class=\"bbcode-paragraph-br\"/>其次，我们希望这个都市里有好故事。再好的开放世界游戏也不能缺了好故事，就像“洛圣都”不能失去麦克、老崔和富兰克林。我们将《异环》的故事定义为单元式轻喜剧，致力于呈现生动细腻的剧情演出和性格鲜明的角色形象。最为重要的是，希望通过类番剧的剧情设计，让玩家产生好奇心，维持代入感，激发持续探索的欲望。<br class=\"bbcode-paragraph-br\"/><br class=\"bbcode-paragraph-br\"/>最后一个目标，我们还是希望都市的体验能更沉浸。我们希望降低开放世界探索的疲劳感，将重点放在都市生活沉浸感塑造上。我们会用一套都市经营玩法来增加趣味性，你可以通过经营店铺获得资金，再去都市里买车买房，享受一段舒适的生活。<br class=\"bbcode-paragraph-br\"/><br class=\"bbcode-paragraph-br\"/>目前，《异环》的开发已经历了一段时间，海特洛市也从无到有搭建了起来，我们想到用一镜到底的方式来做游戏首曝的实机演示，这样也能让你更真实得感受到这个城市，看看这座城市的搭建和生态。未来这个城市还会不断完善，加入更多居民，我们也在编排着这个舞台上会发生的故事。为了达到我们想要的效果，我们这次使用了UE5引擎，同时我们会持续做好多平台优化，让不同平台的玩家都能够获得卓越体验。<br class=\"bbcode-paragraph-br\"/><br class=\"bbcode-paragraph-br\"/>感谢每一位看到我们的玩家，欢迎大家来提出建议，指出问题，提供更多好玩的奇思妙想。也欢迎对《异环》感兴趣、与我们目标一致的伙伴，加入Hotta Studio工作室，我们共同让《异环》成为一款好玩的超自然都市开放世界RPG。"
+      },
+      "tags": [
+        {
+          "id": 997796,
+          "value": "开放世界",
+          "uri": "taptap://taptap.com/library?tag=%E5%BC%80%E6%94%BE%E4%B8%96%E7%95%8C",
+          "web_url": "/tag/%E5%BC%80%E6%94%BE%E4%B8%96%E7%95%8C"
+        },
+        {
+          "id": 997795,
+          "value": "都市",
+          "uri": "taptap://taptap.com/library?tag=%E9%83%BD%E5%B8%82",
+          "web_url": "/tag/%E9%83%BD%E5%B8%82"
+        },
+        {
+          "id": 997392,
+          "value": "角色扮演",
+          "uri": "taptap://taptap.com/library?tag=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94",
+          "web_url": "/tag/%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94"
+        },
+        {
+          "id": 997801,
+          "value": "二次元",
+          "uri": "taptap://taptap.com/library?tag=%E4%BA%8C%E6%AC%A1%E5%85%83",
+          "web_url": "/tag/%E4%BA%8C%E6%AC%A1%E5%85%83"
+        },
+        {
+          "id": 997800,
+          "value": "剧情",
+          "uri": "taptap://taptap.com/library?tag=%E5%89%A7%E6%83%85",
+          "web_url": "/tag/%E5%89%A7%E6%83%85"
+        },
+        {
+          "id": 997799,
+          "value": "竞速",
+          "uri": "taptap://taptap.com/library?tag=%E7%AB%9E%E9%80%9F",
+          "web_url": "/tag/%E7%AB%9E%E9%80%9F"
+        },
+        {
+          "id": 997798,
+          "value": "动作",
+          "uri": "taptap://taptap.com/library?tag=%E5%8A%A8%E4%BD%9C",
+          "web_url": "/tag/%E5%8A%A8%E4%BD%9C"
+        },
+        {
+          "id": 997797,
+          "value": "新怪谈",
+          "uri": "taptap://taptap.com/library?tag=%E6%96%B0%E6%80%AA%E8%B0%88",
+          "web_url": "/tag/%E6%96%B0%E6%80%AA%E8%B0%88"
+        }
+      ],
+      "log": {
+        "follow": {
+          "uri": "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif",
+          "params": {
+            "type": "follow",
+            "APIVersion": "0.6.0",
+            "paramId": 714119,
+            "paramType": "appDetail"
+          }
+        },
+        "open": {
+          "uri": "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif",
+          "params": {
+            "type": "open",
+            "APIVersion": "0.6.0",
+            "paramId": 714119,
+            "paramType": "appDetail"
+          }
+        },
+        "page_view": {
+          "uri": "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif",
+          "params": {
+            "type": "pageView",
+            "APIVersion": "0.6.0",
+            "paramId": 714119,
+            "paramType": "appDetail"
+          }
+        },
+        "play": {
+          "uri": "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif",
+          "params": {
+            "type": "appRedirect",
+            "APIVersion": "0.6.0",
+            "paramId": 714119,
+            "paramType": "appDetail"
+          }
+        },
+        "reserve": {
+          "uri": "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif",
+          "params": {
+            "type": "appReserve",
+            "APIVersion": "0.6.0",
+            "paramId": 714119,
+            "paramType": "appDetail"
+          }
+        },
+        "unfollow": {
+          "uri": "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif",
+          "params": {
+            "type": "unfollow",
+            "APIVersion": "0.6.0",
+            "paramId": 714119,
+            "paramType": "appDetail"
+          }
+        },
+        "unreserved": {
+          "uri": "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif",
+          "params": {
+            "type": "appUnreserved",
+            "APIVersion": "0.6.0",
+            "paramId": 714119,
+            "paramType": "appDetail"
+          }
+        }
+      },
+      "event_log": {
+        "paramId": 714119,
+        "paramType": "appDetail"
+      },
+      "serial_number": {
+        "number_exists": true,
+        "button_action": 0
+      },
+      "stat": {
+        "rating": {
+          "score": "7.0",
+          "max": 10,
+          "latest_score": "7.1",
+          "latest_version_score": "6.3",
+          "latest_review_count": 1309,
+          "latest_version_review_count": 30405
+        },
+        "vote_info": {
+          "1": 10534,
+          "2": 6097,
+          "3": 6772,
+          "4": 5948,
+          "5": 22123
+        },
+        "review_tags": {
+          "mappings": []
+        },
+        "hits_total": 5892376,
+        "play_total": 0,
+        "bought_count": 0,
+        "feed_count": 32123,
+        "reserve_count": 6305940,
+        "recent_sandbox_played_count": 0,
+        "album_count": 0,
+        "review_count": 52770,
+        "topic_count": 32123,
+        "video_count": 0,
+        "official_topic_count": 341,
+        "official_video_count": 0,
+        "official_album_count": 0,
+        "fans_count": 8331643,
+        "hits_total_val": 5892376,
+        "pc_sale_count": 0,
+        "pc_download_count": 932455,
+        "wish_count": 23894,
+        "level_like_count": 0
+      },
+      "developers": [
+        {
+          "id": 384845,
+          "type": "developer",
+          "label": "厂商",
+          "name": "Hotta  Studio",
+          "website": "",
+          "is_online": true,
+          "highlight_tags": [
+            {
+              "type": "app_scale",
+              "value": "1"
+            },
+            {
+              "type": "app_editor_choice",
+              "value": "1"
+            }
+          ],
+          "avatar": null
+        }
+      ],
+      "awards": [
+        {
+          "id": 336,
+          "title": "2025 TapTap",
+          "subtitle": "玩家最期待游戏",
+          "icon": {
+            "url": "https://img-tc.tapimg.com/market/images/9a55fc6b5cd4aa8533bc7135378facde.png/_tap_icon.jpg",
+            "medium_url": "https://img-tc.tapimg.com/market/images/9a55fc6b5cd4aa8533bc7135378facde.png/_tap_icon_m.jpg",
+            "small_url": "https://img-tc.tapimg.com/market/images/9a55fc6b5cd4aa8533bc7135378facde.png/_tap_icon_s.jpg",
+            "original_url": "https://img-tc.tapimg.com/market/images/9a55fc6b5cd4aa8533bc7135378facde.png",
+            "original_format": "webp",
+            "width": 270,
+            "height": 270,
+            "color": "0x6d7073",
+            "original_size": 626,
+            "large_url": "https://img-tc.tapimg.com/market/images/9a55fc6b5cd4aa8533bc7135378facde.png/_tap_icon.jpg"
+          },
+          "year": 2025,
+          "award_platform": "TapTap"
+        },
+        {
+          "id": 268,
+          "title": "2024 TapTap",
+          "subtitle": "最受玩家期待·搞快点儿",
+          "icon": {
+            "url": "https://img-tc.tapimg.com/market/images/4ed940e5529e48d908694d66ef7b4c0a.png/_tap_icon.jpg",
+            "medium_url": "https://img-tc.tapimg.com/market/images/4ed940e5529e48d908694d66ef7b4c0a.png/_tap_icon_m.jpg",
+            "small_url": "https://img-tc.tapimg.com/market/images/4ed940e5529e48d908694d66ef7b4c0a.png/_tap_icon_s.jpg",
+            "original_url": "https://img-tc.tapimg.com/market/images/4ed940e5529e48d908694d66ef7b4c0a.png",
+            "original_format": "png",
+            "width": 270,
+            "height": 270,
+            "color": "0x6c7073",
+            "original_size": 1816,
+            "large_url": "https://img-tc.tapimg.com/market/images/4ed940e5529e48d908694d66ef7b4c0a.png/_tap_icon.jpg"
+          },
+          "year": 2024,
+          "award_platform": "TapTap"
+        }
+      ],
+      "can_buy_redeem_code": {
+        "flag": false
+      },
+      "information": [
+        {
+          "type": "text_link",
+          "title": "厂商",
+          "text": "Hotta  Studio",
+          "link": "taptap://taptap.com/developer?developer_id=384845",
+          "web_url": "/developer/384845"
+        },
+        {
+          "type": "text",
+          "key": "developer_legal_name",
+          "title": "供应商",
+          "text": "完美世界（北京）互动娱乐有限公司"
+        },
+        {
+          "type": "text",
+          "title": "统一社会信用代码",
+          "text": "911101086796396866"
+        },
+        {
+          "type": "text_link",
+          "title": "官方 QQ 群",
+          "text": "978230237",
+          "link": "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=wqbVhe4TNR9Q4NFDQMiw1UZhMgFvjDO4&authKey=jg%2B1ElicsBpjzNFDUZNmKU4MiRTAzZ5I2yJ2Gn21mW8sN4QKvFbYFnjxUkMz6IoM&noverify=0&group_code=978230237"
+        },
+        {
+          "type": "text_link",
+          "title": "游戏官网",
+          "text": "官网",
+          "link": "https://yh.wanmei.com/index.html?utm_source=TapTap&utm_medium=OfficialWebsite&utm_campaign=Android"
+        },
+        {
+          "type": "text_list",
+          "title": "支持语言",
+          "text": "简体中文",
+          "list": [
+            "简体中文"
+          ]
+        },
+        {
+          "type": "text",
+          "title": "系统版本要求",
+          "text": "无系统要求"
+        },
+        {
+          "type": "text",
+          "key": "apk_size",
+          "title": "游戏大小"
+        },
+        {
+          "type": "text",
+          "key": "version_name",
+          "title": "当前版本"
+        },
+        {
+          "type": "text",
+          "title": "更新时间",
+          "text": "2026-04-21"
+        },
+        {
+          "type": "text",
+          "key": "internet_app",
+          "title": "联网 App",
+          "text": "是"
+        },
+        {
+          "type": "text_link",
+          "key": "icp",
+          "title": "App 核准",
+          "text": "苏ICP备19036924号-6A",
+          "link": "https://beian.miit.gov.cn/"
+        },
+        {
+          "type": "text",
+          "key": "icp_entity_name",
+          "title": "核准主办方",
+          "text": "苏州幻塔网络科技有限公司"
+        },
+        {
+          "type": "no_text_link",
+          "key": "apk_permissions",
+          "title": "所需权限"
+        },
+        {
+          "type": "no_text_link",
+          "key": "privacy_policy",
+          "title": "隐私政策",
+          "link": "https://www.wanmei.com/safestatic/privacy.html"
+        }
+      ],
+      "seo": {
+        "price": "0.00",
+        "currency": "CNY",
+        "index": false
+      },
+      "sharing": {
+        "url": "https://www.taptap.cn/app/714119",
+        "title": "异环",
+        "description": "TapTap评分7.0 (52,770 人评价)\r\n开放世界,都市,角色扮演",
+        "image": {
+          "url": "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_sharing.jpg",
+          "medium_url": "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_sharing.jpg",
+          "small_url": "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_sharing.jpg",
+          "original_url": "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png",
+          "original_format": "png",
+          "width": 512,
+          "height": 512,
+          "color": "0x689996",
+          "original_size": 310278,
+          "large_url": "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_sharing.jpg"
+        },
+        "message_params": {
+          "obj_type": "app",
+          "obj_id": "714119"
+        }
+      },
+      "highlight_tags": [
+        {
+          "type": "editors_choice",
+          "uri": "taptap://taptap.com/library?editors_choice=1",
+          "web_url": "/collection?key=type&val=recommend"
+        },
+        {
+          "type": "normal",
+          "uri": "taptap://taptap.com/app_list?key=hits_type_name&val=pc_hot&title=%E7%83%AD%E9%97%A8%E4%B8%8B%E8%BD%BD%E6%A6%9C&show_seq=1",
+          "web_url": "/collection?key=hits_type_name&val=pc_hot&show_seq=1",
+          "data": {
+            "icon": {
+              "url": "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png",
+              "medium_url": "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png",
+              "small_url": "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png",
+              "original_url": "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png",
+              "original_format": "png",
+              "color": "0xffffff",
+              "large_url": "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+            },
+            "label": "热门下载榜 #4"
+          }
+        },
+        {
+          "type": "normal",
+          "uri": "taptap://taptap.com/app_list?key=hits_type_name&val=action&title=%E5%8A%A8%E4%BD%9C&show_seq=1",
+          "web_url": "/collection?key=hits_type_name&val=action&show_seq=1",
+          "data": {
+            "icon": {
+              "url": "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png",
+              "medium_url": "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png",
+              "small_url": "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png",
+              "original_url": "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png",
+              "original_format": "png",
+              "color": "0xffffff",
+              "large_url": "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+            },
+            "label": "动作 #1"
+          }
+        }
+      ],
+      "downgrade_request": [
+        {
+          "key": "friendship",
+          "value": false
+        },
+        {
+          "key": "whatsnew",
+          "value": false
+        },
+        {
+          "key": "serial_number",
+          "value": false
+        },
+        {
+          "key": "review",
+          "value": false
+        },
+        {
+          "key": "feed",
+          "value": false
+        },
+        {
+          "key": "recommend",
+          "value": false
+        },
+        {
+          "key": "video",
+          "value": false
+        },
+        {
+          "key": "history",
+          "value": false
+        },
+        {
+          "key": "actions",
+          "value": false
+        },
+        {
+          "key": "in_app_event",
+          "value": false
+        },
+        {
+          "key": "creators_hub",
+          "value": false
+        },
+        {
+          "key": "app_top_feeds",
+          "value": false
+        },
+        {
+          "key": "app_feeds",
+          "value": false
+        },
+        {
+          "key": "game_sign",
+          "value": false
+        },
+        {
+          "key": "videos",
+          "value": false
+        },
+        {
+          "key": "activity",
+          "value": false
+        },
+        {
+          "key": "auto_download",
+          "value": false
+        },
+        {
+          "key": "test",
+          "value": false
+        },
+        {
+          "key": "user_played",
+          "value": false
+        }
+      ],
+      "show_module": [
+        {
+          "key": "score",
+          "value": true
+        },
+        {
+          "key": "review",
+          "value": true
+        }
+      ],
+      "complaint": {
+        "uri": "taptap://taptap.com/to?url=https%3A%2F%2Fwww.taptap.cn%2Fcomplaint%3Fid%3D714119%26type%3Dapp",
+        "web_url": "/complaint?id=714119&type=app",
+        "url": "https://www.taptap.cn/complaint?id=714119&type=app"
+      },
+      "is_console_game": false,
+      "console_game_supported_system": [],
+      "console_game_download_url": []
+    }
+  },
+  "now": 1779854551,
+  "success": true
+}

@@ -1,0 +1,658 @@
+======================================================================
+  异环 (ID=714119) — /app/v3/detail 完整字段
+  包名: com.hottagames.yh.laohu
+  查询时间: 2026-05-27
+======================================================================
+
+awards: [2]
+  [0]:
+    id: 336
+    title: "2025 TapTap"
+    subtitle: "玩家最期待游戏"
+    icon:
+      url: "https://img-tc.tapimg.com/market/images/9a55fc6b5cd4aa8533bc7135378facde.png/_tap_icon.jpg"
+      medium_url: "https://img-tc.tapimg.com/market/images/9a55fc6b5cd4aa8533bc7135378facde.png/_tap_icon_m.jpg"
+      small_url: "https://img-tc.tapimg.com/market/images/9a55fc6b5cd4aa8533bc7135378facde.png/_tap_icon_s.jpg"
+      original_url: "https://img-tc.tapimg.com/market/images/9a55fc6b5cd4aa8533bc7135378facde.png"
+      original_format: "webp"
+      width: 270
+      height: 270
+      color: "0x6d7073"
+      original_size: 626
+      large_url: "https://img-tc.tapimg.com/market/images/9a55fc6b5cd4aa8533bc7135378facde.png/_tap_icon.jpg"
+    year: 2,025
+    award_platform: "TapTap"
+  [1]:
+    id: 268
+    title: "2024 TapTap"
+    subtitle: "最受玩家期待·搞快点儿"
+    icon:
+      url: "https://img-tc.tapimg.com/market/images/4ed940e5529e48d908694d66ef7b4c0a.png/_tap_icon.jpg"
+      medium_url: "https://img-tc.tapimg.com/market/images/4ed940e5529e48d908694d66ef7b4c0a.png/_tap_icon_m.jpg"
+      small_url: "https://img-tc.tapimg.com/market/images/4ed940e5529e48d908694d66ef7b4c0a.png/_tap_icon_s.jpg"
+      original_url: "https://img-tc.tapimg.com/market/images/4ed940e5529e48d908694d66ef7b4c0a.png"
+      original_format: "png"
+      width: 270
+      height: 270
+      color: "0x6c7073"
+      original_size: 1,816
+      large_url: "https://img-tc.tapimg.com/market/images/4ed940e5529e48d908694d66ef7b4c0a.png/_tap_icon.jpg"
+    year: 2,024
+    award_platform: "TapTap"
+
+banner:
+  url: "https://img-tc.tapimg.com/market/images/62d29608c31eb7caaf231e18431a6d49.jpg/_tap_banner.jpg"
+  medium_url: "https://img-tc.tapimg.com/market/images/62d29608c31eb7caaf231e18431a6d49.jpg/_tap_banner_m.jpg"
+  small_url: "https://img-tc.tapimg.com/market/images/62d29608c31eb7caaf231e18431a6d49.jpg/_tap_banner_s.jpg"
+  original_url: "https://img-tc.tapimg.com/market/images/62d29608c31eb7caaf231e18431a6d49.jpg"
+  original_format: "jpeg"
+  width: 1,920
+  height: 1,080
+  color: "0x737288"
+  original_size: 2,339,159
+  large_url: "https://img-tc.tapimg.com/market/images/62d29608c31eb7caaf231e18431a6d49.jpg/_tap_banner_l.jpg"
+
+button_flag: 1
+
+button_params: {}
+
+can_buy_redeem_code:
+  flag: false
+
+complaint:
+  uri: "taptap://taptap.com/to?url=https%3A%2F%2Fwww.taptap.cn%2Fcomplaint%3Fid%3D714119%26type%3Dapp"
+  web_url: "/complaint?id=714119&type=app"
+  url: "https://www.taptap.cn/complaint?id=714119&type=app"
+
+console_game_download_url: []
+
+console_game_supported_system: []
+
+description:
+  text: "《异环》公测现已开启！《异环》是Hotta Studio自主研发的超自然都市开放世界RPG。故事将从海特洛市启篇，作为首位「无证上岗」的「异象猎人」，你将成为接取民间异象委托维持周转的古董店「伊波恩」的一员，与个性迥异、能力非凡的伙伴们一起..."
+
+developer_note:
+  text: "大家好，我们是Hotta Studio工作室《异环》制作组。<br class="bbcode-paragraph-br"/><br class="bbcode-paragraph-br"/>作为一款超自然都市开放世界题材游戏，《异环》想要..."
+
+developers: [1]
+  [0]:
+    id: 384,845
+    type: "developer"
+    label: "厂商"
+    name: "Hotta  Studio"
+    website: ""
+    is_online: true
+    highlight_tags: [2]
+      [0]:
+        type: "app_scale"
+        value: "1"
+      [1]:
+        type: "app_editor_choice"
+        value: "1"
+    avatar: null
+
+downgrade_request: [19]
+  [0]:
+    key: "friendship"
+    value: false
+  [1]:
+    key: "whatsnew"
+    value: false
+  [2]:
+    key: "serial_number"
+    value: false
+  [3]:
+    key: "review"
+    value: false
+  [4]:
+    key: "feed"
+    value: false
+  [5]:
+    key: "recommend"
+    value: false
+  [6]:
+    key: "video"
+    value: false
+  [7]:
+    key: "history"
+    value: false
+  [8]:
+    key: "actions"
+    value: false
+  [9]:
+    key: "in_app_event"
+    value: false
+  [10]:
+    key: "creators_hub"
+    value: false
+  [11]:
+    key: "app_top_feeds"
+    value: false
+  [12]:
+    key: "app_feeds"
+    value: false
+  [13]:
+    key: "game_sign"
+    value: false
+  [14]:
+    key: "videos"
+    value: false
+  [15]:
+    key: "activity"
+    value: false
+  [16]:
+    key: "auto_download"
+    value: false
+  [17]:
+    key: "test"
+    value: false
+  [18]:
+    key: "user_played"
+    value: false
+
+download:
+  apk_id: 1,020,591
+  apk:
+    native_code: [1]
+      [0]: "arm64-v8a"
+    name: "com.hottagames.yh.laohu-3.apk"
+    size: 940,569,985
+    md5: "bd35be4d02bcf0f9d2359c52b7b3d12c"
+    version_code: 3
+    version_name: "1.0.2"
+  apk_permissions: [2]
+    [0]:
+      label: "隐私敏感权限"
+      data: [4]
+        [0]:
+          label: "读取你的SD卡中的内容"
+          permission: "android.permission.READ_EXTERNAL_STORAGE"
+          description: "允许应用读取您SD卡的内容。"
+        [1]:
+          label: "修改或删除你的SD卡中的内容"
+          permission: "android.permission.WRITE_EXTERNAL_STORAGE"
+          description: "允许写入SD卡。"
+        [2]:
+          label: "拍摄照片或视频"
+          permission: "android.permission.CAMERA"
+          description: "允许该应用使用相机拍摄照片和视频。此权限可让该应用可让该应用随时使用相机，而无需您的确认。"
+        [3]:
+          label: "与蓝牙设备配对"
+          permission: "android.permission.BLUETOOTH"
+          description: "允许该应用查看设备上的蓝牙配置，以及与配对设备建立连接或接受其连接请求。"
+    [1]:
+      label: "常规权限"
+      data: [9]
+        [0]:
+          label: "查看网络连接"
+          permission: "android.permission.ACCESS_NETWORK_STATE"
+          description: "允许该应用查看网络连接的相关信息，例如存在和连接的网络。"
+        [1]:
+          label: "查看WLAN连接"
+          permission: "android.permission.ACCESS_WIFI_STATE"
+          description: "允许该应用查看WLAN网络的相关信息，例如是否启用了WLAN以及连接的WLAN设备的名称。"
+        [2]:
+          label: "更改网络连接性"
+          permission: "android.permission.CHANGE_NETWORK_STATE"
+          description: "允许应用更改网络连接的状态。"
+        [3]:
+          label: "完全的网络访问权限"
+          permission: "android.permission.INTERNET"
+          description: "允许应用程序打开网络套接字。浏览器和其他某些应用提供了向互联网发送数据的途径，因此应用无需该权限即可向互联网发送数据。"
+        [4]:
+          label: "更改你的音频设置"
+          permission: "android.permission.MODIFY_AUDIO_SETTINGS"
+          description: "允许该应用修改全局音频设置，例如音量和用于输出的扬声器。"
+        [5]:
+          label: "运行前台服务"
+          permission: "android.permission.FOREGROUND_SERVICE"
+          description: "允许该应用使用前台服务。"
+        [6]:
+          label: "控制振动"
+          permission: "android.permission.VIBRATE"
+          description: "允许应用控制振动器。"
+        [7]:
+          label: "防止手机休眠"
+          permission: "android.permission.WAKE_LOCK"
+          description: "允许应用阻止设备进入休眠状态。"
+        [8]:
+          label: "请求安装文件包"
+          permission: "android.permission.REQUEST_INSTALL_PACKAGES"
+          description: "允许应用请求安装文件包。"
+  api_level: 29
+  is_force: false
+  target_sdk_version: 30
+
+event_log:
+  paramId: 714,119
+  paramType: "appDetail"
+
+has_moment_rec: false
+
+has_official: true
+
+hidden_button: false
+
+highlight_tags: [3]
+  [0]:
+    type: "editors_choice"
+    uri: "taptap://taptap.com/library?editors_choice=1"
+    web_url: "/collection?key=type&val=recommend"
+  [1]:
+    type: "normal"
+    uri: "taptap://taptap.com/app_list?key=hits_type_name&val=pc_hot&title=%E7%83%AD%E9%97%A8%E4%B8%8B%E8%BD%BD%E6%A6%9C&show_seq=..."
+    web_url: "/collection?key=hits_type_name&val=pc_hot&show_seq=1"
+    data:
+      icon:
+        url: "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+        medium_url: "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+        small_url: "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+        original_url: "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+        original_format: "png"
+        color: "0xffffff"
+        large_url: "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+      label: "热门下载榜 #4"
+  [2]:
+    type: "normal"
+    uri: "taptap://taptap.com/app_list?key=hits_type_name&val=action&title=%E5%8A%A8%E4%BD%9C&show_seq=1"
+    web_url: "/collection?key=hits_type_name&val=action&show_seq=1"
+    data:
+      icon:
+        url: "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+        medium_url: "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+        small_url: "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+        original_url: "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+        original_format: "png"
+        color: "0xffffff"
+        large_url: "https://img-tc.tapimg.com/market/images/742127ecbf99919e96c81a5980f5721c.png"
+      label: "动作 #1"
+
+hints: [1]
+  [0]: "公测已正式开启"
+
+icon:
+  url: "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon.jpg"
+  medium_url: "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon_m.jpg"
+  small_url: "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon_s.jpg"
+  original_url: "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png"
+  original_format: "png"
+  width: 270
+  height: 270
+  color: "0x689996"
+  original_size: 310,278
+  large_url: "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon.jpg"
+
+id: 714,119
+
+identifier: "com.hottagames.yh.laohu"
+
+information: [15]
+  [0]:
+    type: "text_link"
+    title: "厂商"
+    text: "Hotta  Studio"
+    link: "taptap://taptap.com/developer?developer_id=384845"
+    web_url: "/developer/384845"
+  [1]:
+    type: "text"
+    key: "developer_legal_name"
+    title: "供应商"
+    text: "完美世界（北京）互动娱乐有限公司"
+  [2]:
+    type: "text"
+    title: "统一社会信用代码"
+    text: "911101086796396866"
+  [3]:
+    type: "text_link"
+    title: "官方 QQ 群"
+    text: "978230237"
+    link: "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=wqbVhe4TNR9Q4NFDQMiw1UZhMgFvjDO4&authKey=jg%2B1ElicsBpjzNFDUZNmKU4MiRTAzZ5I2yJ..."
+  [4]:
+    type: "text_link"
+    title: "游戏官网"
+    text: "官网"
+    link: "https://yh.wanmei.com/index.html?utm_source=TapTap&utm_medium=OfficialWebsite&utm_campaign=Android"
+  [5]:
+    type: "text_list"
+    title: "支持语言"
+    text: "简体中文"
+    list: [1]
+      [0]: "简体中文"
+  [6]:
+    type: "text"
+    title: "系统版本要求"
+    text: "无系统要求"
+  [7]:
+    type: "text"
+    key: "apk_size"
+    title: "游戏大小"
+  [8]:
+    type: "text"
+    key: "version_name"
+    title: "当前版本"
+  [9]:
+    type: "text"
+    title: "更新时间"
+    text: "2026-04-21"
+  [10]:
+    type: "text"
+    key: "internet_app"
+    title: "联网 App"
+    text: "是"
+  [11]:
+    type: "text_link"
+    key: "icp"
+    title: "App 核准"
+    text: "苏ICP备19036924号-6A"
+    link: "https://beian.miit.gov.cn/"
+  [12]:
+    type: "text"
+    key: "icp_entity_name"
+    title: "核准主办方"
+    text: "苏州幻塔网络科技有限公司"
+  [13]:
+    type: "no_text_link"
+    key: "apk_permissions"
+    title: "所需权限"
+  [14]:
+    type: "no_text_link"
+    key: "privacy_policy"
+    title: "隐私政策"
+    link: "https://www.wanmei.com/safestatic/privacy.html"
+
+is_console_game: false
+
+is_deny_minors: false
+
+itunes_id: "6514281568"
+
+log:
+  follow:
+    uri: "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif"
+    params:
+      type: "follow"
+      APIVersion: "0.6.0"
+      paramId: 714,119
+      paramType: "appDetail"
+  open:
+    uri: "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif"
+    params:
+      type: "open"
+      APIVersion: "0.6.0"
+      paramId: 714,119
+      paramType: "appDetail"
+  page_view:
+    uri: "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif"
+    params:
+      type: "pageView"
+      APIVersion: "0.6.0"
+      paramId: 714,119
+      paramType: "appDetail"
+  play:
+    uri: "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif"
+    params:
+      type: "appRedirect"
+      APIVersion: "0.6.0"
+      paramId: 714,119
+      paramType: "appDetail"
+  reserve:
+    uri: "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif"
+    params:
+      type: "appReserve"
+      APIVersion: "0.6.0"
+      paramId: 714,119
+      paramType: "appDetail"
+  unfollow:
+    uri: "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif"
+    params:
+      type: "unfollow"
+      APIVersion: "0.6.0"
+      paramId: 714,119
+      paramType: "appDetail"
+  unreserved:
+    uri: "https://tap-snow.cn-beijing.dualstack.log.aliyuncs.com/logstores/logs/track.gif"
+    params:
+      type: "appUnreserved"
+      APIVersion: "0.6.0"
+      paramId: 714,119
+      paramType: "appDetail"
+
+price:
+  taptap_current: ""
+  discount_rate: 0
+
+screenshots: [7]
+  [0]:
+    url: "https://img-tc.tapimg.com/market/images/2ad073f1cc0654de3235e73af446f7bf.jpg/_tap_screenshot.jpg"
+    medium_url: "https://img-tc.tapimg.com/market/images/2ad073f1cc0654de3235e73af446f7bf.jpg/_tap_screenshot_m.jpg"
+    small_url: "https://img-tc.tapimg.com/market/images/2ad073f1cc0654de3235e73af446f7bf.jpg/_tap_screenshot_s.jpg"
+    original_url: "https://img-tc.tapimg.com/market/images/2ad073f1cc0654de3235e73af446f7bf.jpg"
+    original_format: "jpeg"
+    width: 1,920
+    height: 1,080
+    color: "0x726e85"
+    original_size: 2,300,880
+    large_url: "https://img-tc.tapimg.com/market/images/2ad073f1cc0654de3235e73af446f7bf.jpg/_tap_screenshot.jpg"
+  [1]:
+    url: "https://img-tc.tapimg.com/market/images/0a9d0f9feaeebfaeac1a3ce8e927eaed.jpg/_tap_screenshot.jpg"
+    medium_url: "https://img-tc.tapimg.com/market/images/0a9d0f9feaeebfaeac1a3ce8e927eaed.jpg/_tap_screenshot_m.jpg"
+    small_url: "https://img-tc.tapimg.com/market/images/0a9d0f9feaeebfaeac1a3ce8e927eaed.jpg/_tap_screenshot_s.jpg"
+    original_url: "https://img-tc.tapimg.com/market/images/0a9d0f9feaeebfaeac1a3ce8e927eaed.jpg"
+    original_format: "jpeg"
+    width: 1,920
+    height: 1,080
+    color: "0x3d6587"
+    original_size: 1,438,416
+    large_url: "https://img-tc.tapimg.com/market/images/0a9d0f9feaeebfaeac1a3ce8e927eaed.jpg/_tap_screenshot.jpg"
+  [2]:
+    url: "https://img-tc.tapimg.com/market/images/9b616fb6ee99a45da3a1a387f92d9060.jpg/_tap_screenshot.jpg"
+    medium_url: "https://img-tc.tapimg.com/market/images/9b616fb6ee99a45da3a1a387f92d9060.jpg/_tap_screenshot_m.jpg"
+    small_url: "https://img-tc.tapimg.com/market/images/9b616fb6ee99a45da3a1a387f92d9060.jpg/_tap_screenshot_s.jpg"
+    original_url: "https://img-tc.tapimg.com/market/images/9b616fb6ee99a45da3a1a387f92d9060.jpg"
+    original_format: "jpeg"
+    width: 1,920
+    height: 1,080
+    color: "0x736151"
+    original_size: 1,857,650
+    large_url: "https://img-tc.tapimg.com/market/images/9b616fb6ee99a45da3a1a387f92d9060.jpg/_tap_screenshot.jpg"
+  [3]:
+    url: "https://img-tc.tapimg.com/market/images/4c46876403e459f27d41963834c04017.jpg/_tap_screenshot.jpg"
+    medium_url: "https://img-tc.tapimg.com/market/images/4c46876403e459f27d41963834c04017.jpg/_tap_screenshot_m.jpg"
+    small_url: "https://img-tc.tapimg.com/market/images/4c46876403e459f27d41963834c04017.jpg/_tap_screenshot_s.jpg"
+    original_url: "https://img-tc.tapimg.com/market/images/4c46876403e459f27d41963834c04017.jpg"
+    original_format: "jpeg"
+    width: 1,920
+    height: 1,080
+    color: "0x3b5891"
+    original_size: 1,767,909
+    large_url: "https://img-tc.tapimg.com/market/images/4c46876403e459f27d41963834c04017.jpg/_tap_screenshot.jpg"
+  [4]:
+    url: "https://img-tc.tapimg.com/market/images/fb1f7c3d9974344388ea9f15cb227519.jpg/_tap_screenshot.jpg"
+    medium_url: "https://img-tc.tapimg.com/market/images/fb1f7c3d9974344388ea9f15cb227519.jpg/_tap_screenshot_m.jpg"
+    small_url: "https://img-tc.tapimg.com/market/images/fb1f7c3d9974344388ea9f15cb227519.jpg/_tap_screenshot_s.jpg"
+    original_url: "https://img-tc.tapimg.com/market/images/fb1f7c3d9974344388ea9f15cb227519.jpg"
+    original_format: "jpeg"
+    width: 1,920
+    height: 1,080
+    color: "0x785f68"
+    original_size: 1,295,474
+    large_url: "https://img-tc.tapimg.com/market/images/fb1f7c3d9974344388ea9f15cb227519.jpg/_tap_screenshot.jpg"
+  [5]:
+    url: "https://img-tc.tapimg.com/market/images/a890ad19494a175f13bfdda4ad03db6c.jpg/_tap_screenshot.jpg"
+    medium_url: "https://img-tc.tapimg.com/market/images/a890ad19494a175f13bfdda4ad03db6c.jpg/_tap_screenshot_m.jpg"
+    small_url: "https://img-tc.tapimg.com/market/images/a890ad19494a175f13bfdda4ad03db6c.jpg/_tap_screenshot_s.jpg"
+    original_url: "https://img-tc.tapimg.com/market/images/a890ad19494a175f13bfdda4ad03db6c.jpg"
+    original_format: "jpeg"
+    width: 1,920
+    height: 1,080
+    color: "0x6e6d86"
+    original_size: 1,700,065
+    large_url: "https://img-tc.tapimg.com/market/images/a890ad19494a175f13bfdda4ad03db6c.jpg/_tap_screenshot.jpg"
+  [6]:
+    url: "https://img-tc.tapimg.com/market/images/09151ecd0e7e098dbf822940407ab1f9.jpg/_tap_screenshot.jpg"
+    medium_url: "https://img-tc.tapimg.com/market/images/09151ecd0e7e098dbf822940407ab1f9.jpg/_tap_screenshot_m.jpg"
+    small_url: "https://img-tc.tapimg.com/market/images/09151ecd0e7e098dbf822940407ab1f9.jpg/_tap_screenshot_s.jpg"
+    original_url: "https://img-tc.tapimg.com/market/images/09151ecd0e7e098dbf822940407ab1f9.jpg"
+    original_format: "jpeg"
+    width: 1,920
+    height: 1,080
+    color: "0x585d73"
+    original_size: 1,489,478
+    large_url: "https://img-tc.tapimg.com/market/images/09151ecd0e7e098dbf822940407ab1f9.jpg/_tap_screenshot.jpg"
+
+seo:
+  price: "0.00"
+  currency: "CNY"
+  index: false
+
+serial_number:
+  number_exists: true
+  button_action: 0
+
+sharing:
+  url: "https://www.taptap.cn/app/714119"
+  title: "异环"
+  description: "TapTap评分7.0 (52,770 人评价)
+开放世界,都市,角色扮演"
+  image:
+    url: "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_sharing.jpg"
+    medium_url: "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_sharing.jpg"
+    small_url: "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_sharing.jpg"
+    original_url: "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png"
+    original_format: "png"
+    width: 512
+    height: 512
+    color: "0x689996"
+    original_size: 310,278
+    large_url: "https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_sharing.jpg"
+  message_params:
+    obj_type: "app"
+    obj_id: "714119"
+
+show_module: [2]
+  [0]:
+    key: "score"
+    value: true
+  [1]:
+    key: "review"
+    value: true
+
+stat:
+  rating:
+    score: "7.0"
+    max: 10
+    latest_score: "7.1"
+    latest_version_score: "6.3"
+    latest_review_count: 1,309
+    latest_version_review_count: 30,405
+  vote_info:
+    1: 10,534
+    2: 6,097
+    3: 6,772
+    4: 5,948
+    5: 22,123
+  review_tags:
+    mappings: []
+  hits_total: 5,892,376
+  play_total: 0
+  bought_count: 0
+  feed_count: 32,123
+  reserve_count: 6,305,940
+  recent_sandbox_played_count: 0
+  album_count: 0
+  review_count: 52,770
+  topic_count: 32,123
+  video_count: 0
+  official_topic_count: 341
+  official_video_count: 0
+  official_album_count: 0
+  fans_count: 8,331,643
+  hits_total_val: 5,892,376
+  pc_sale_count: 0
+  pc_download_count: 932,455
+  wish_count: 23,894
+  level_like_count: 0
+
+style: 0
+
+tags: [8]
+  [0]:
+    id: 997,796
+    value: "开放世界"
+    uri: "taptap://taptap.com/library?tag=%E5%BC%80%E6%94%BE%E4%B8%96%E7%95%8C"
+    web_url: "/tag/%E5%BC%80%E6%94%BE%E4%B8%96%E7%95%8C"
+  [1]:
+    id: 997,795
+    value: "都市"
+    uri: "taptap://taptap.com/library?tag=%E9%83%BD%E5%B8%82"
+    web_url: "/tag/%E9%83%BD%E5%B8%82"
+  [2]:
+    id: 997,392
+    value: "角色扮演"
+    uri: "taptap://taptap.com/library?tag=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94"
+    web_url: "/tag/%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94"
+  [3]:
+    id: 997,801
+    value: "二次元"
+    uri: "taptap://taptap.com/library?tag=%E4%BA%8C%E6%AC%A1%E5%85%83"
+    web_url: "/tag/%E4%BA%8C%E6%AC%A1%E5%85%83"
+  [4]:
+    id: 997,800
+    value: "剧情"
+    uri: "taptap://taptap.com/library?tag=%E5%89%A7%E6%83%85"
+    web_url: "/tag/%E5%89%A7%E6%83%85"
+  [5]:
+    id: 997,799
+    value: "竞速"
+    uri: "taptap://taptap.com/library?tag=%E7%AB%9E%E9%80%9F"
+    web_url: "/tag/%E7%AB%9E%E9%80%9F"
+  [6]:
+    id: 997,798
+    value: "动作"
+    uri: "taptap://taptap.com/library?tag=%E5%8A%A8%E4%BD%9C"
+    web_url: "/tag/%E5%8A%A8%E4%BD%9C"
+  [7]:
+    id: 997,797
+    value: "新怪谈"
+    uri: "taptap://taptap.com/library?tag=%E6%96%B0%E6%80%AA%E8%B0%88"
+    web_url: "/tag/%E6%96%B0%E6%80%AA%E8%B0%88"
+
+title: "异环"
+
+title_labels: []
+
+update_date: "2026-04-21"
+
+uri:
+  google: ""
+  google_play: ""
+  apple: "https://apps.apple.com/app/id6514281568?ct=Tap714119"
+  download_site: "https://yh.wanmei.com/index.html?utm_source=TapTap&utm_medium=OfficialWebsite&utm_campaign=Android"
+
+videos: [1]
+  [0]:
+    video_id: 5,609,890
+    thumbnail:
+      url: "https://img-tc.tapimg.com/video-picture/tid-69e06cad42e88fc2e06849f3/first.jpg/_tap_screenshot.jpg"
+      medium_url: "https://img-tc.tapimg.com/video-picture/tid-69e06cad42e88fc2e06849f3/first.jpg/_tap_screenshot_m.jpg"
+      small_url: "https://img-tc.tapimg.com/video-picture/tid-69e06cad42e88fc2e06849f3/first.jpg/_tap_screenshot_s.jpg"
+      original_url: "https://img-tc.tapimg.com/video-picture/tid-69e06cad42e88fc2e06849f3/first.jpg"
+      original_format: "jpeg"
+      width: 1,920
+      height: 1,080
+      color: "0x2c4a73"
+      original_size: 285,277
+      large_url: "https://img-tc.tapimg.com/video-picture/tid-69e06cad42e88fc2e06849f3/first.jpg/_tap_screenshot.jpg"
+    trace_log:
+      video_id: 5,609,890
+      subjectId: 714,119
+      subjectType: "appDetail"
+    play_log:
+      video_id: 5,609,890
+      paramId: 5,609,890
+      paramType: "videoDetail"
+      subjectId: 714,119
+      subjectType: "appDetail"
+
+whatsnew:
+  text: "<div>异环公测现已开启</div>"

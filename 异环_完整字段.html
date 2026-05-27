@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>异环 (ID=714119) — TapTap API 完整字段</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f5f5; color: #333; padding: 20px; }
+.container { max-width: 1000px; margin: 0 auto; }
+h1 { font-size: 22px; margin-bottom: 5px; color: #1a1a1a; }
+.sub { color: #888; font-size: 13px; margin-bottom: 20px; }
+.card { background: #fff; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.06); overflow: hidden; }
+.card-header { padding: 12px 16px; font-weight: 600; font-size: 14px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+.card-header .en { color: #888; font-weight: 400; font-size: 12px; font-family: 'SF Mono', 'Fira Code', monospace; }
+.card-body { padding: 12px 16px; }
+.card-body table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.card-body td { padding: 6px 10px; vertical-align: top; border-bottom: 1px solid #f5f5f5; }
+.card-body td:first-child { color: #555; white-space: nowrap; font-weight: 500; width: 180px; }
+.card-body td:last-child { word-break: break-all; color: #1a1a1a; font-family: 'SF Mono', 'Fira Code', Consolas, monospace; }
+.val-str { color: #0a7d3a; }
+.val-num { color: #1a56db; }
+.val-bool { color: #9333ea; }
+.val-null { color: #aaa; font-style: italic; }
+.val-url { color: #0369a1; font-size: 11px; }
+.tag { display: inline-block; background: #e8f0fe; color: #1a56db; padding: 1px 8px; border-radius: 3px; margin: 2px; font-size: 11px; }
+.sub-card { background: #fafafa; border-radius: 6px; padding: 8px 12px; margin: 6px 0; }
+.sub-card .sub-title { font-size: 12px; font-weight: 600; color: #555; margin-bottom: 4px; }
+.footer { text-align: center; color: #aaa; font-size: 12px; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>异环</h1>
+<p class="sub">ID: 714119 &nbsp;|&nbsp; 包名: com.hottagames.yh.laohu &nbsp;|&nbsp; 接口: GET /app/v3/detail &nbsp;|&nbsp; 查询时间: 2026-05-27</p>
+
+<!-- 基础信息 -->
+<div class="card">
+<div class="card-header">基础信息 <span class="en">id / title / identifier / style</span></div>
+<div class="card-body"><table>
+<tr><td>游戏 ID</td><td class="val-num">714,119</td></tr>
+<tr><td>游戏名称</td><td class="val-str">异环</td></tr>
+<tr><td>包名</td><td class="val-str">com.hottagames.yh.laohu</td></tr>
+<tr><td>App Store ID</td><td class="val-num">6514281568</td></tr>
+<tr><td>样式标识</td><td class="val-num">0</td></tr>
+<tr><td>更新日期</td><td class="val-str">2026-04-21</td></tr>
+<tr><td>提示标签</td><td><span class="tag">公测已正式开启</span></td></tr>
+<tr><td>标题标签</td><td class="val-null">无</td></tr>
+</table></div>
+</div>
+
+<!-- 标签 -->
+<div class="card">
+<div class="card-header">游戏标签 <span class="en">tags</span></div>
+<div class="card-body">
+<span class="tag">开放世界</span>
+<span class="tag">都市</span>
+<span class="tag">角色扮演</span>
+<span class="tag">二次元</span>
+<span class="tag">剧情</span>
+<span class="tag">竞速</span>
+<span class="tag">动作</span>
+<span class="tag">新怪谈</span>
+</div>
+</div>
+
+<!-- 排行榜 -->
+<div class="card">
+<div class="card-header">榜单排名 <span class="en">highlight_tags</span></div>
+<div class="card-body"><table>
+<tr><td>编辑推荐</td><td class="val-bool">是 (editors_choice)</td></tr>
+<tr><td>热门下载榜</td><td class="val-str">#4</td></tr>
+<tr><td>动作类</td><td class="val-str">#1</td></tr>
+</table></div>
+</div>
+
+<!-- 开发者 -->
+<div class="card">
+<div class="card-header">开发商信息 <span class="en">developers</span></div>
+<div class="card-body"><table>
+<tr><td>开发商</td><td class="val-str">Hotta Studio</td></tr>
+<tr><td>开发商 ID</td><td class="val-num">384,845</td></tr>
+<tr><td>供应商</td><td class="val-str">完美世界（北京）互动娱乐有限公司</td></tr>
+<tr><td>统一社会信用代码</td><td class="val-str">911101086796396866</td></tr>
+<tr><td>ICP 备案</td><td class="val-str">苏ICP备19036924号-6A</td></tr>
+<tr><td>核准主办方</td><td class="val-str">苏州幻塔网络科技有限公司</td></tr>
+<tr><td>是否有官方内容</td><td class="val-bool">是</td></tr>
+<tr><td>是否有动态推荐</td><td class="val-bool">否</td></tr>
+<tr><td>是否主机游戏</td><td class="val-bool">否</td></tr>
+<tr><td>是否限制未成年</td><td class="val-bool">否</td></tr>
+<tr><td>是否隐藏按钮</td><td class="val-bool">否</td></tr>
+</table></div>
+</div>
+
+<!-- 联系与链接 -->
+<div class="card">
+<div class="card-header">联系与链接 <span class="en">information / uri / complaint</span></div>
+<div class="card-body"><table>
+<tr><td>官网</td><td class="val-url">https://yh.wanmei.com/</td></tr>
+<tr><td>App Store</td><td class="val-url">https://apps.apple.com/app/id6514281568</td></tr>
+<tr><td>官方 QQ 群</td><td class="val-str">978230237</td></tr>
+<tr><td>隐私政策</td><td class="val-url">https://www.wanmei.com/safestatic/privacy.html</td></tr>
+<tr><td>投诉链接</td><td class="val-url">https://www.taptap.cn/complaint?id=714119&type=app</td></tr>
+<tr><td>支持语言</td><td class="val-str">简体中文</td></tr>
+<tr><td>联网 App</td><td class="val-bool">是</td></tr>
+</table></div>
+</div>
+
+<!-- 媒体资源 -->
+<div class="card">
+<div class="card-header">媒体资源 <span class="en">icon / banner / screenshots / videos</span></div>
+<div class="card-body"><table>
+<tr><td>图标</td><td class="val-url">https://img-tc.tapimg.com/...ec0bd50c4a0bafa60cde8d0f3775ee84.png (270×270, PNG, 310KB)</td></tr>
+<tr><td>封面横幅</td><td class="val-url">https://img-tc.tapimg.com/...62d29608c31eb7caaf231e18431a6d49.jpg (1920×1080, JPEG, 2.3MB)</td></tr>
+<tr><td>截图</td><td class="val-num">7 张</td></tr>
+<tr><td>截图尺寸</td><td class="val-str">均为 1920×1080, JPEG, 1.3~2.3MB</td></tr>
+<tr><td>宣传视频</td><td class="val-num">1 个 (video_id=5,609,890)</td></tr>
+</table></div>
+</div>
+
+<!-- 获奖 -->
+<div class="card">
+<div class="card-header">获奖记录 <span class="en">awards</span></div>
+<div class="card-body"><table>
+<tr><td>2025 TapTap</td><td class="val-str">玩家最期待游戏</td></tr>
+<tr><td>2024 TapTap</td><td class="val-str">最受玩家期待·搞快点儿</td></tr>
+</table></div>
+</div>
+
+<!-- 评分统计 -->
+<div class="card">
+<div class="card-header">评分与统计 <span class="en">stat</span></div>
+<div class="card-body"><table>
+<tr><td>当前评分</td><td class="val-num">7.0 / 10</td></tr>
+<tr><td>最新版本评分</td><td class="val-num">6.3 / 10 (30,405 人评价)</td></tr>
+<tr><td>最近 7 天评分</td><td class="val-num">7.1 / 10 (1,309 人评价)</td></tr>
+<tr><td>粉丝数</td><td class="val-num">8,331,643</td></tr>
+<tr><td>预约数</td><td class="val-num">6,305,940</td></tr>
+<tr><td>愿望单</td><td class="val-num">23,894</td></tr>
+<tr><td>评价总数</td><td class="val-num">52,770</td></tr>
+<tr><td>话题数</td><td class="val-num">32,123</td></tr>
+<tr><td>Feed 动态数</td><td class="val-num">32,123</td></tr>
+<tr><td>点击量</td><td class="val-num">5,892,376</td></tr>
+<tr><td>官方话题数</td><td class="val-num">341</td></tr>
+</table></div>
+</div>
+
+<!-- 投票分布 -->
+<div class="card">
+<div class="card-header">评分投票分布 <span class="en">stat.vote_info</span></div>
+<div class="card-body"><table>
+<tr><td>⭐5 星</td><td class="val-num">22,123 (42.9%)</td></tr>
+<tr><td>⭐4 星</td><td class="val-num">5,948 (11.5%)</td></tr>
+<tr><td>⭐3 星</td><td class="val-num">6,772 (13.1%)</td></tr>
+<tr><td>⭐2 星</td><td class="val-num">6,097 (11.8%)</td></tr>
+<tr><td>⭐1 星</td><td class="val-num">10,534 (20.4%)</td></tr>
+</table></div>
+</div>
+
+<!-- 下载数据 -->
+<div class="card">
+<div class="card-header">下载数据 <span class="en">stat (download/bought/pc)</span></div>
+<div class="card-body"><table>
+<tr><td>PC 下载量</td><td class="val-num">932,455</td></tr>
+<tr><td>总购买/下载量</td><td class="val-num">0</td></tr>
+<tr><td>PC 销量</td><td class="val-num">0</td></tr>
+<tr><td>总游玩次数</td><td class="val-num">0</td></tr>
+<tr><td>等级点赞</td><td class="val-num">0</td></tr>
+<tr><td>最近沙盒游玩</td><td class="val-num">0</td></tr>
+</table></div>
+</div>
+
+<!-- 官方内容 -->
+<div class="card">
+<div class="card-header">官方内容统计 <span class="en">stat (official_*)</span></div>
+<div class="card-body"><table>
+<tr><td>官方话题数</td><td class="val-num">341</td></tr>
+<tr><td>官方视频数</td><td class="val-num">0</td></tr>
+<tr><td>官方相册数</td><td class="val-num">0</td></tr>
+<tr><td>视频总数</td><td class="val-num">0</td></tr>
+<tr><td>相册总数</td><td class="val-num">0</td></tr>
+</table></div>
+</div>
+
+<!-- APK 信息 -->
+<div class="card">
+<div class="card-header">APK 安装包信息 <span class="en">download</span></div>
+<div class="card-body"><table>
+<tr><td>APK ID</td><td class="val-num">1,020,591</td></tr>
+<tr><td>文件名</td><td class="val-str">com.hottagames.yh.laohu-3.apk</td></tr>
+<tr><td>文件大小</td><td class="val-num">940,569,985 (约 897 MB)</td></tr>
+<tr><td>MD5</td><td class="val-str">bd35be4d02bcf0f9d2359c52b7b3d12c</td></tr>
+<tr><td>版本号</td><td class="val-num">3 (显示 1.0.2)</td></tr>
+<tr><td>CPU 架构</td><td class="val-str">arm64-v8a</td></tr>
+<tr><td>API Level</td><td class="val-num">29 (Android 10+)</td></tr>
+<tr><td>Target SDK</td><td class="val-num">30 (Android 11)</td></tr>
+<tr><td>是否强制更新</td><td class="val-bool">否</td></tr>
+</table></div>
+</div>
+
+<!-- APK 权限 -->
+<div class="card">
+<div class="card-header">APK 权限 (隐私敏感) <span class="en">download.apk_permissions[0]</span></div>
+<div class="card-body"><table>
+<tr><td>读取 SD 卡</td><td>允许应用读取您 SD 卡的内容</td></tr>
+<tr><td>写入 SD 卡</td><td>允许写入 SD 卡</td></tr>
+<tr><td>拍摄照片或视频</td><td>允许该应用使用相机</td></tr>
+<tr><td>蓝牙配对</td><td>允许该应用查看设备上的蓝牙配置</td></tr>
+</table></div>
+</div>
+
+<div class="card">
+<div class="card-header">APK 权限 (常规) <span class="en">download.apk_permissions[1]</span></div>
+<div class="card-body"><table>
+<tr><td>查看网络连接</td><td>ACCESS_NETWORK_STATE</td></tr>
+<tr><td>查看 WLAN 连接</td><td>ACCESS_WIFI_STATE</td></tr>
+<tr><td>更改网络连接性</td><td>CHANGE_NETWORK_STATE</td></tr>
+<tr><td>完全的网络访问权限</td><td>INTERNET</td></tr>
+<tr><td>更改音频设置</td><td>MODIFY_AUDIO_SETTINGS</td></tr>
+<tr><td>运行前台服务</td><td>FOREGROUND_SERVICE</td></tr>
+<tr><td>控制振动</td><td>VIBRATE</td></tr>
+<tr><td>防止手机休眠</td><td>WAKE_LOCK</td></tr>
+<tr><td>请求安装文件包</td><td>REQUEST_INSTALL_PACKAGES</td></tr>
+</table></div>
+</div>
+
+<!-- 价格 -->
+<div class="card">
+<div class="card-header">价格信息 <span class="en">price / seo / can_buy_redeem_code</span></div>
+<div class="card-body"><table>
+<tr><td>TapTap 当前价格</td><td class="val-str">免费</td></tr>
+<tr><td>折扣率</td><td class="val-num">0%</td></tr>
+<tr><td>SEO 价格</td><td class="val-str">0.00 CNY</td></tr>
+<tr><td>SEO 索引</td><td class="val-bool">否</td></tr>
+<tr><td>可购买兑换码</td><td class="val-bool">否</td></tr>
+<tr><td>序列号/激活码</td><td class="val-bool">有</td></tr>
+</table></div>
+</div>
+
+<!-- 分享 -->
+<div class="card">
+<div class="card-header">分享信息 <span class="en">sharing</span></div>
+<div class="card-body"><table>
+<tr><td>分享链接</td><td class="val-url">https://www.taptap.cn/app/714119</td></tr>
+<tr><td>分享标题</td><td class="val-str">异环</td></tr>
+<tr><td>分享描述</td><td class="val-str">TapTap评分7.0 (52,770 人评价) 开放世界,都市,角色扮演</td></tr>
+<tr><td>分享图片</td><td class="val-url">...ec0bd50c4a0bafa60cde8d0f3775ee84.png (512×512)</td></tr>
+</table></div>
+</div>
+
+<!-- 内容 -->
+<div class="card">
+<div class="card-header">游戏内容 <span class="en">description / developer_note / whatsnew</span></div>
+<div class="card-body">
+<div class="sub-card">
+<div class="sub-title">游戏简介 (description)</div>
+《异环》公测现已开启！《异环》是Hotta Studio自主研发的超自然都市开放世界RPG。故事将从海特洛市启篇，作为首位「无证上岗」的「异象猎人」，你将成为接取民间异象委托维持周转的古董店「伊波恩」的一员...
+</div>
+<div class="sub-card">
+<div class="sub-title">开发者的话 (developer_note)</div>
+大家好，我们是Hotta Studio工作室《异环》制作组。作为一款超自然都市开放世界题材游戏，《异环》想要为玩家提供一个熟悉，又稍带陌生的舞台...
+</div>
+<div class="sub-card">
+<div class="sub-title">最新更新 (whatsnew)</div>
+异环公测现已开启
+</div>
+</div>
+</div>
+
+<!-- 展示模块 -->
+<div class="card">
+<div class="card-header">展示模块开关 <span class="en">show_module</span></div>
+<div class="card-body"><table>
+<tr><td>显示评分</td><td class="val-bool">是</td></tr>
+<tr><td>显示评价</td><td class="val-bool">是</td></tr>
+</table></div>
+</div>
+
+<!-- 功能降级 -->
+<div class="card">
+<div class="card-header">功能降级开关 <span class="en">downgrade_request</span></div>
+<div class="card-body">
+<p style="font-size:12px;color:#888;margin-bottom:8px">19 个功能模块状态（false=功能开启, true=降级关闭）</p>
+<table>
+<tr><td>好友系统 (friendship)</td><td class="val-bool">开启</td></tr>
+<tr><td>更新内容 (whatsnew)</td><td class="val-bool">开启</td></tr>
+<tr><td>序列号 (serial_number)</td><td class="val-bool">开启</td></tr>
+<tr><td>评价 (review)</td><td class="val-bool">开启</td></tr>
+<tr><td>动态 (feed)</td><td class="val-bool">开启</td></tr>
+<tr><td>推荐 (recommend)</td><td class="val-bool">开启</td></tr>
+<tr><td>视频 (video)</td><td class="val-bool">开启</td></tr>
+<tr><td>历史记录 (history)</td><td class="val-bool">开启</td></tr>
+<tr><td>操作按钮 (actions)</td><td class="val-bool">开启</td></tr>
+<tr><td>游戏内活动 (in_app_event)</td><td class="val-bool">开启</td></tr>
+<tr><td>创作者中心 (creators_hub)</td><td class="val-bool">开启</td></tr>
+<tr><td>应用置顶动态 (app_top_feeds)</td><td class="val-bool">开启</td></tr>
+<tr><td>应用动态流 (app_feeds)</td><td class="val-bool">开启</td></tr>
+<tr><td>游戏签到 (game_sign)</td><td class="val-bool">开启</td></tr>
+<tr><td>活动 (activity)</td><td class="val-bool">开启</td></tr>
+<tr><td>自动下载 (auto_download)</td><td class="val-bool">开启</td></tr>
+<tr><td>测试 (test)</td><td class="val-bool">开启</td></tr>
+<tr><td>玩家游玩记录 (user_played)</td><td class="val-bool">开启</td></tr>
+</table>
+</div>
+</div>
+
+<!-- 埋点 -->
+<div class="card">
+<div class="card-header">埋点配置 <span class="en">log / event_log</span></div>
+<div class="card-body">
+<p style="font-size:12px;color:#888;margin-bottom:8px">7 种用户行为埋点，发送到阿里云日志服务</p>
+<table>
+<tr><td>关注 (follow)</td><td class="val-url">tap-snow.cn-beijing...log.aliyuncs.com</td></tr>
+<tr><td>打开游戏 (open)</td><td class="val-url">tap-snow.cn-beijing...log.aliyuncs.com</td></tr>
+<tr><td>页面浏览 (page_view)</td><td class="val-url">tap-snow.cn-beijing...log.aliyuncs.com</td></tr>
+<tr><td>跳转下载 (play)</td><td class="val-url">tap-snow.cn-beijing...log.aliyuncs.com</td></tr>
+<tr><td>预约 (reserve)</td><td class="val-url">tap-snow.cn-beijing...log.aliyuncs.com</td></tr>
+<tr><td>取消关注 (unfollow)</td><td class="val-url">tap-snow.cn-beijing...log.aliyuncs.com</td></tr>
+<tr><td>取消预约 (unreserved)</td><td class="val-url">tap-snow.cn-beijing...log.aliyuncs.com</td></tr>
+</table>
+<p style="font-size:11px;color:#aaa;margin-top:8px">所有埋点共用 paramId=714119, paramType=appDetail, APIVersion=0.6.0</p>
+</div>
+</div>
+
+<div class="footer">接口: GET /app/v3/detail · 数据来源: api.taptapdada.com · 查询时间: 2026-05-27</div>
+</div>
+</body>
+</html>

@@ -194,18 +194,18 @@ def fetch_game_info(game_id):
     app = resp.json().get('data', {}).get('app', {})
     stat = app.get('stat', {})
     devs = app.get('developers', [])
+    rating = stat.get('rating', {})
     return {
         'title': app.get('title', ''),
         'identifier': app.get('identifier', ''),
         'update_date': app.get('update_date', ''),
-        'score': stat.get('rating', {}).get('score', ''),
-        'latest_score': stat.get('rating', {}).get('latest_score', ''),
+        'score': rating.get('score', ''),
+        'latest_version_score': rating.get('latest_version_score', ''),
+        'latest_score': rating.get('latest_score', ''),
+        'latest_review_count': rating.get('latest_review_count', 0),
         'fans_count': stat.get('fans_count', 0),
-        'reserve_count': stat.get('reserve_count', 0),
         'review_count': stat.get('review_count', 0),
         'pc_download_count': stat.get('pc_download_count', 0),
-        'hits_total': stat.get('hits_total', 0),
-        'wish_count': stat.get('wish_count', 0),
         'tags': [t.get('value', '') for t in app.get('tags', [])],
         'developer': devs[0].get('name', '') if devs else '',
         'icon_url': app.get('icon', {}).get('medium_url', ''),
@@ -458,17 +458,20 @@ new Chart(document.getElementById('chartOverview').getContext('2d'), {{
                 html += f'<img src="{gi["icon_url"]}" style="width:64px;height:64px;border-radius:12px;flex-shrink:0">\n'
             html += '<div style="flex:1">\n'
             html += f'<div style="font-size:13px;color:#aaa;margin-bottom:6px">{tags_html}</div>\n'
+            fans_wan = gi.get('fans_count', 0) / 10000
             html += '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px 16px;font-size:12px">\n'
-            html += f'<div><span style="color:#888">评分</span> <span style="color:#FFCE56;font-weight:600">{gi.get("score","?")}</span> / 10</div>\n'
-            html += f'<div><span style="color:#888">最新版本</span> {gi.get("latest_score","?")}</div>\n'
-            html += f'<div><span style="color:#888">粉丝</span> {gi.get("fans_count",0):,}</div>\n'
-            html += f'<div><span style="color:#888">评价</span> {gi.get("review_count",0):,}</div>\n'
-            html += f'<div><span style="color:#888">PC下载</span> {gi.get("pc_download_count",0):,}</div>\n'
-            html += f'<div><span style="color:#888">预约</span> {gi.get("reserve_count",0):,}</div>\n'
-            html += f'<div><span style="color:#888">愿望单</span> {gi.get("wish_count",0):,}</div>\n'
+            html += f'<div><span style="color:#888">游戏 ID</span> {gid}</div>\n'
+            html += f'<div><span style="color:#888">游戏名称</span> {gi.get("title",gname)}</div>\n'
+            html += f'<div><span style="color:#888">粉丝数</span> {fans_wan:.1f}万</div>\n'
+            html += f'<div><span style="color:#888">评价总数</span> {gi.get("review_count",0):,}</div>\n'
+            html += f'<div><span style="color:#888">当前评分</span> <span style="color:#FFCE56;font-weight:600">{gi.get("score","?")}</span> / 10</div>\n'
+            html += f'<div><span style="color:#888">最新版本评分</span> {gi.get("latest_version_score","?")}</div>\n'
+            html += f'<div><span style="color:#888">最近 7 天评分</span> {gi.get("latest_score","?")} ({gi.get("latest_review_count",0):,}评价)</div>\n'
             html += f'<div><span style="color:#888">开发商</span> {gi.get("developer","?")}</div>\n'
             if gi.get('update_date'):
-                html += f'<div><span style="color:#888">更新</span> {gi["update_date"]}</div>\n'
+                html += f'<div><span style="color:#888">更新日期</span> {gi["update_date"]}</div>\n'
+            if gi.get('pc_download_count', 0) > 0:
+                html += f'<div><span style="color:#888">PC下载</span> {gi.get("pc_download_count",0):,}</div>\n'
             html += '</div></div></div>\n'
 
         html += f'<p class="meta">{len(timestamps)} 个数据点 | {timestamps[0]} ~ {timestamps[-1]}</p>\n'

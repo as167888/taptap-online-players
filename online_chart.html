@@ -163,47 +163,6 @@ new Chart(document.getElementById('chartOverview').getContext('2d'), {
 });
 </script>
 <div id="page-game0" class="page">
-<h2>异环</h2>
-<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
-<img src="https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-<div style="flex:1">
-<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">开放世界</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">都市</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">剧情</span></div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
-<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">714119</span></div>
-<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">异环</span></div>
-<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">833.3万</span></div>
-<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">5.3万</span></div>
-<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">7.0</span><span style="color:#888"> / 10</span></div>
-<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">6.3</span></div>
-<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">7.1</span><span style="color:#888;font-size:13px"> (0.1万评价)</span></div>
-<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">Hotta  Studio</span></div>
-<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">93.3万</span></div>
-<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-04-21</span></div>
-</div></div></div>
-<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
-<div class="stats">
-<div class="stat-card"><div class="label">当前在线</div><div class="value">5,048</div><div class="change"><span class="down">▼21%</span></div></div>
-<div class="stat-card"><div class="label">最高</div><div class="value">7,021</div></div>
-<div class="stat-card"><div class="label">最低</div><div class="value">5,048</div></div>
-<div class="stat-card"><div class="label">平均</div><div class="value">6,002</div></div>
-</div>
-<div class="chart-wrap"><canvas id="chartGame0"></canvas></div>
-<script>
-new Chart(document.getElementById('chartGame0').getContext('2d'), {
-    type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "异环", "data": [7021, 5568, 6369, 5048], "borderColor": "#FF6384", "backgroundColor": "#FF638430", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
-    options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
-            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
-        }
-    }
-});
-</script>
-</div>
-<div id="page-game1" class="page">
 <h2>火炬之光：无限</h2>
 <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
 <img src="https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
@@ -228,11 +187,52 @@ new Chart(document.getElementById('chartGame0').getContext('2d'), {
 <div class="stat-card"><div class="label">最低</div><div class="value">8,366</div></div>
 <div class="stat-card"><div class="label">平均</div><div class="value">8,947</div></div>
 </div>
+<div class="chart-wrap"><canvas id="chartGame0"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame0').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "火炬之光：无限", "data": [8848, 9188, 9386, 8366], "borderColor": "#FF6384", "backgroundColor": "#FF638430", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game1" class="page">
+<h2>异环</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">开放世界</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">都市</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">剧情</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
+<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">714119</span></div>
+<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">异环</span></div>
+<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">833.3万</span></div>
+<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">5.3万</span></div>
+<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">7.0</span><span style="color:#888"> / 10</span></div>
+<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">6.3</span></div>
+<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">7.1</span><span style="color:#888;font-size:13px"> (0.1万评价)</span></div>
+<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">Hotta  Studio</span></div>
+<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">93.3万</span></div>
+<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-04-21</span></div>
+</div></div></div>
+<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">5,048</div><div class="change"><span class="down">▼21%</span></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">7,021</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">5,048</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">6,002</div></div>
+</div>
 <div class="chart-wrap"><canvas id="chartGame1"></canvas></div>
 <script>
 new Chart(document.getElementById('chartGame1').getContext('2d'), {
     type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "火炬之光：无限", "data": [8848, 9188, 9386, 8366], "borderColor": "#36A2EB", "backgroundColor": "#36A2EB30", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    data: { labels: timestamps, datasets: [{"label": "异环", "data": [7021, 5568, 6369, 5048], "borderColor": "#36A2EB", "backgroundColor": "#36A2EB30", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
     options: {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },
@@ -286,129 +286,6 @@ new Chart(document.getElementById('chartGame2').getContext('2d'), {
 </script>
 </div>
 <div id="page-game3" class="page">
-<h2>鸣潮</h2>
-<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
-<img src="https://img-tc.tapimg.com/market/images/197919623b5375c76349b897029ee19a.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-<div style="flex:1">
-<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">开放世界</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">动作</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">ARPG</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">冒险</span></div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
-<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">234280</span></div>
-<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">鸣潮</span></div>
-<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">1274.1万</span></div>
-<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">14.8万</span></div>
-<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">7.2</span><span style="color:#888"> / 10</span></div>
-<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">5.6</span></div>
-<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">5.8</span><span style="color:#888;font-size:13px"> (0.0万评价)</span></div>
-<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">库洛游戏</span></div>
-<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">19.5万</span></div>
-<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-05-19</span></div>
-</div></div></div>
-<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
-<div class="stats">
-<div class="stat-card"><div class="label">当前在线</div><div class="value">1,625</div><div class="change"><span class="down">▼5%</span></div></div>
-<div class="stat-card"><div class="label">最高</div><div class="value">1,717</div></div>
-<div class="stat-card"><div class="label">最低</div><div class="value">1,334</div></div>
-<div class="stat-card"><div class="label">平均</div><div class="value">1,550</div></div>
-</div>
-<div class="chart-wrap"><canvas id="chartGame3"></canvas></div>
-<script>
-new Chart(document.getElementById('chartGame3').getContext('2d'), {
-    type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "鸣潮", "data": [1334, 1525, 1717, 1625], "borderColor": "#4BC0C0", "backgroundColor": "#4BC0C030", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
-    options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
-            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
-        }
-    }
-});
-</script>
-</div>
-<div id="page-game4" class="page">
-<h2>心动小镇</h2>
-<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
-<img src="https://img-tc.tapimg.com/market/images/49e4df26c2dd6c0604b7ccc52877b8fe.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-<div style="flex:1">
-<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">模拟经营</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">治愈</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">多人联机</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">建造</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span></div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
-<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">45213</span></div>
-<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">心动小镇</span></div>
-<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">3778.4万</span></div>
-<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">21.3万</span></div>
-<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">8.8</span><span style="color:#888"> / 10</span></div>
-<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">8.6</span></div>
-<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">8.4</span><span style="color:#888;font-size:13px"> (0.0万评价)</span></div>
-<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">心动</span></div>
-<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">28.7万</span></div>
-<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-04-08</span></div>
-</div></div></div>
-<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
-<div class="stats">
-<div class="stat-card"><div class="label">当前在线</div><div class="value">910</div><div class="change"><span class="down">▼17%</span></div></div>
-<div class="stat-card"><div class="label">最高</div><div class="value">1,092</div></div>
-<div class="stat-card"><div class="label">最低</div><div class="value">910</div></div>
-<div class="stat-card"><div class="label">平均</div><div class="value">1,009</div></div>
-</div>
-<div class="chart-wrap"><canvas id="chartGame4"></canvas></div>
-<script>
-new Chart(document.getElementById('chartGame4').getContext('2d'), {
-    type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "心动小镇", "data": [986, 1049, 1092, 910], "borderColor": "#9966FF", "backgroundColor": "#9966FF30", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
-    options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
-            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
-        }
-    }
-});
-</script>
-</div>
-<div id="page-game5" class="page">
-<h2>原神</h2>
-<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
-<img src="https://img-tc.tapimg.com/market/images/4c441769b5fb3b670c8b59a6124d9ff2.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-<div style="flex:1">
-<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">开放世界</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">养成</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">高自由度</span></div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
-<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">168332</span></div>
-<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">原神</span></div>
-<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">3778.7万</span></div>
-<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">50.0万</span></div>
-<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">7.9</span><span style="color:#888"> / 10</span></div>
-<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">7.4</span></div>
-<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">7.5</span><span style="color:#888;font-size:13px"> (0.1万评价)</span></div>
-<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">miHoYo</span></div>
-<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">54.7万</span></div>
-<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-05-20</span></div>
-</div></div></div>
-<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
-<div class="stats">
-<div class="stat-card"><div class="label">当前在线</div><div class="value">1,271</div><div class="change"><span class="down">▼7%</span></div></div>
-<div class="stat-card"><div class="label">最高</div><div class="value">1,365</div></div>
-<div class="stat-card"><div class="label">最低</div><div class="value">1,210</div></div>
-<div class="stat-card"><div class="label">平均</div><div class="value">1,272</div></div>
-</div>
-<div class="chart-wrap"><canvas id="chartGame5"></canvas></div>
-<script>
-new Chart(document.getElementById('chartGame5').getContext('2d'), {
-    type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "原神", "data": [1210, 1241, 1365, 1271], "borderColor": "#FF9F40", "backgroundColor": "#FF9F4030", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
-    options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
-            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
-        }
-    }
-});
-</script>
-</div>
-<div id="page-game6" class="page">
 <h2>超自然行动组</h2>
 <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
 <img src="https://img-tc.tapimg.com/market/images/bcec76f0e878361961d21993a82c4467.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
@@ -433,11 +310,11 @@ new Chart(document.getElementById('chartGame5').getContext('2d'), {
 <div class="stat-card"><div class="label">最低</div><div class="value">1,405</div></div>
 <div class="stat-card"><div class="label">平均</div><div class="value">1,669</div></div>
 </div>
-<div class="chart-wrap"><canvas id="chartGame6"></canvas></div>
+<div class="chart-wrap"><canvas id="chartGame3"></canvas></div>
 <script>
-new Chart(document.getElementById('chartGame6').getContext('2d'), {
+new Chart(document.getElementById('chartGame3').getContext('2d'), {
     type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "超自然行动组", "data": [1405, 1642, 1791, 1838], "borderColor": "#7CB342", "backgroundColor": "#7CB34230", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    data: { labels: timestamps, datasets: [{"label": "超自然行动组", "data": [1405, 1642, 1791, 1838], "borderColor": "#4BC0C0", "backgroundColor": "#4BC0C030", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
     options: {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },
@@ -449,36 +326,36 @@ new Chart(document.getElementById('chartGame6').getContext('2d'), {
 });
 </script>
 </div>
-<div id="page-game7" class="page">
-<h2>明日方舟：终末地</h2>
+<div id="page-game4" class="page">
+<h2>鸣潮</h2>
 <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
-<img src="https://img-tc.tapimg.com/market/images/20f852433d148f474fa775c9bbefd83c.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+<img src="https://img-tc.tapimg.com/market/images/197919623b5375c76349b897029ee19a.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
 <div style="flex:1">
-<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">模拟经营</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">冒险</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">科幻</span></div>
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">开放世界</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">动作</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">ARPG</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">冒险</span></div>
 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
-<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">232326</span></div>
-<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">明日方舟：终末地</span></div>
-<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">660.0万</span></div>
-<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">8.7万</span></div>
-<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">5.7</span><span style="color:#888"> / 10</span></div>
-<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">8.6</span></div>
-<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">7.9</span><span style="color:#888;font-size:13px"> (0.0万评价)</span></div>
-<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">鹰角开拓者</span></div>
-<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">16.7万</span></div>
-<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-04-17</span></div>
+<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">234280</span></div>
+<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">鸣潮</span></div>
+<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">1274.1万</span></div>
+<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">14.8万</span></div>
+<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">7.2</span><span style="color:#888"> / 10</span></div>
+<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">5.6</span></div>
+<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">5.8</span><span style="color:#888;font-size:13px"> (0.0万评价)</span></div>
+<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">库洛游戏</span></div>
+<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">19.5万</span></div>
+<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-05-19</span></div>
 </div></div></div>
 <p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
 <div class="stats">
-<div class="stat-card"><div class="label">当前在线</div><div class="value">1,231</div><div class="change"><span class="down">▼2%</span></div></div>
-<div class="stat-card"><div class="label">最高</div><div class="value">1,253</div></div>
-<div class="stat-card"><div class="label">最低</div><div class="value">400</div></div>
-<div class="stat-card"><div class="label">平均</div><div class="value">1,010</div></div>
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,625</div><div class="change"><span class="down">▼5%</span></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,717</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">1,334</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,550</div></div>
 </div>
-<div class="chart-wrap"><canvas id="chartGame7"></canvas></div>
+<div class="chart-wrap"><canvas id="chartGame4"></canvas></div>
 <script>
-new Chart(document.getElementById('chartGame7').getContext('2d'), {
+new Chart(document.getElementById('chartGame4').getContext('2d'), {
     type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "明日方舟：终末地", "data": [400, 1154, 1253, 1231], "borderColor": "#E91E63", "backgroundColor": "#E91E6330", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    data: { labels: timestamps, datasets: [{"label": "鸣潮", "data": [1334, 1525, 1717, 1625], "borderColor": "#9966FF", "backgroundColor": "#9966FF30", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
     options: {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },
@@ -490,7 +367,7 @@ new Chart(document.getElementById('chartGame7').getContext('2d'), {
 });
 </script>
 </div>
-<div id="page-game8" class="page">
+<div id="page-game5" class="page">
 <h2>和平精英</h2>
 <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
 <img src="https://img-tc.tapimg.com/market/images/5aab2ad5180219065b71f3ae35c7b646.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
@@ -515,11 +392,11 @@ new Chart(document.getElementById('chartGame7').getContext('2d'), {
 <div class="stat-card"><div class="label">最低</div><div class="value">1,154</div></div>
 <div class="stat-card"><div class="label">平均</div><div class="value">1,334</div></div>
 </div>
-<div class="chart-wrap"><canvas id="chartGame8"></canvas></div>
+<div class="chart-wrap"><canvas id="chartGame5"></canvas></div>
 <script>
-new Chart(document.getElementById('chartGame8').getContext('2d'), {
+new Chart(document.getElementById('chartGame5').getContext('2d'), {
     type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "和平精英", "data": [1154, 1328, 1424, 1432], "borderColor": "#00BCD4", "backgroundColor": "#00BCD430", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    data: { labels: timestamps, datasets: [{"label": "和平精英", "data": [1154, 1328, 1424, 1432], "borderColor": "#FF9F40", "backgroundColor": "#FF9F4030", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
     options: {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },
@@ -531,130 +408,7 @@ new Chart(document.getElementById('chartGame8').getContext('2d'), {
 });
 </script>
 </div>
-<div id="page-game9" class="page">
-<h2>三角洲行动</h2>
-<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
-<img src="https://img-tc.tapimg.com/market/images/24d6e0a99ef04d14177a4d82bc2a1802.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-<div style="flex:1">
-<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">搜打撤</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">生存</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">射击</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">动作</span></div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
-<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">330259</span></div>
-<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">三角洲行动</span></div>
-<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">3011.9万</span></div>
-<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">4.5万</span></div>
-<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">5.3</span><span style="color:#888"> / 10</span></div>
-<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">5.5</span></div>
-<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">4.9</span><span style="color:#888;font-size:13px"> (0.1万评价)</span></div>
-<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">腾讯</span></div>
-<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">26.2万</span></div>
-<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-04-16</span></div>
-</div></div></div>
-<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
-<div class="stats">
-<div class="stat-card"><div class="label">当前在线</div><div class="value">1,082</div><div class="change"><span class="down">▼7%</span></div></div>
-<div class="stat-card"><div class="label">最高</div><div class="value">1,168</div></div>
-<div class="stat-card"><div class="label">最低</div><div class="value">902</div></div>
-<div class="stat-card"><div class="label">平均</div><div class="value">1,054</div></div>
-</div>
-<div class="chart-wrap"><canvas id="chartGame9"></canvas></div>
-<script>
-new Chart(document.getElementById('chartGame9').getContext('2d'), {
-    type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "三角洲行动", "data": [902, 1062, 1168, 1082], "borderColor": "#FF5722", "backgroundColor": "#FF572230", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
-    options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
-            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
-        }
-    }
-});
-</script>
-</div>
-<div id="page-game10" class="page">
-<h2>伊瑟</h2>
-<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
-<img src="https://img-tc.tapimg.com/market/images/0e9f5f40e951e813f257d20ef5a702b1.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-<div style="flex:1">
-<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">回合制</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">策略</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">养成</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">都市</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span></div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
-<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">236627</span></div>
-<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">伊瑟</span></div>
-<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">260.1万</span></div>
-<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">1.2万</span></div>
-<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">7.6</span><span style="color:#888"> / 10</span></div>
-<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">8.0</span></div>
-<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">8.1</span><span style="color:#888;font-size:13px"> (0.0万评价)</span></div>
-<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">心动</span></div>
-<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">15.0万</span></div>
-<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2025-11-06</span></div>
-</div></div></div>
-<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
-<div class="stats">
-<div class="stat-card"><div class="label">当前在线</div><div class="value">818</div><div class="change"><span class="down">▼1%</span></div></div>
-<div class="stat-card"><div class="label">最高</div><div class="value">830</div></div>
-<div class="stat-card"><div class="label">最低</div><div class="value">800</div></div>
-<div class="stat-card"><div class="label">平均</div><div class="value">815</div></div>
-</div>
-<div class="chart-wrap"><canvas id="chartGame10"></canvas></div>
-<script>
-new Chart(document.getElementById('chartGame10').getContext('2d'), {
-    type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "伊瑟", "data": [800, 813, 830, 818], "borderColor": "#9C27B0", "backgroundColor": "#9C27B030", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
-    options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
-            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
-        }
-    }
-});
-</script>
-</div>
-<div id="page-game11" class="page">
-<h2>明日方舟</h2>
-<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
-<img src="https://img-tc.tapimg.com/market/images/2ea1a63c45fe294d36e29e348d441ea3.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
-<div style="flex:1">
-<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">塔防</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">养成</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">美少女</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">策略</span></div>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
-<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">70253</span></div>
-<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">明日方舟</span></div>
-<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">1218.7万</span></div>
-<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">19.5万</span></div>
-<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">8.1</span><span style="color:#888"> / 10</span></div>
-<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">7.3</span></div>
-<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">7.5</span><span style="color:#888;font-size:13px"> (0.0万评价)</span></div>
-<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">鹰角网络</span></div>
-<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">5.5万</span></div>
-<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-05-01</span></div>
-</div></div></div>
-<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
-<div class="stats">
-<div class="stat-card"><div class="label">当前在线</div><div class="value">1,176</div><div class="change"><span class="down">▼3%</span></div></div>
-<div class="stat-card"><div class="label">最高</div><div class="value">1,211</div></div>
-<div class="stat-card"><div class="label">最低</div><div class="value">1,107</div></div>
-<div class="stat-card"><div class="label">平均</div><div class="value">1,159</div></div>
-</div>
-<div class="chart-wrap"><canvas id="chartGame11"></canvas></div>
-<script>
-new Chart(document.getElementById('chartGame11').getContext('2d'), {
-    type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "明日方舟", "data": [1142, 1107, 1211, 1176], "borderColor": "#3F51B5", "backgroundColor": "#3F51B530", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
-    options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
-            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
-        }
-    }
-});
-</script>
-</div>
-<div id="page-game12" class="page">
+<div id="page-game6" class="page">
 <h2>崩坏：星穹铁道</h2>
 <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
 <img src="https://img-tc.tapimg.com/market/images/05dfc5290bd52ab150b68f0b57d7d9a3.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
@@ -679,11 +433,11 @@ new Chart(document.getElementById('chartGame11').getContext('2d'), {
 <div class="stat-card"><div class="label">最低</div><div class="value">1,068</div></div>
 <div class="stat-card"><div class="label">平均</div><div class="value">1,226</div></div>
 </div>
-<div class="chart-wrap"><canvas id="chartGame12"></canvas></div>
+<div class="chart-wrap"><canvas id="chartGame6"></canvas></div>
 <script>
-new Chart(document.getElementById('chartGame12').getContext('2d'), {
+new Chart(document.getElementById('chartGame6').getContext('2d'), {
     type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "崩坏：星穹铁道", "data": [1068, 1161, 1281, 1393], "borderColor": "#009688", "backgroundColor": "#00968830", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    data: { labels: timestamps, datasets: [{"label": "崩坏：星穹铁道", "data": [1068, 1161, 1281, 1393], "borderColor": "#7CB342", "backgroundColor": "#7CB34230", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
     options: {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },
@@ -695,7 +449,171 @@ new Chart(document.getElementById('chartGame12').getContext('2d'), {
 });
 </script>
 </div>
-<div id="page-game13" class="page">
+<div id="page-game7" class="page">
+<h2>原神</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/4c441769b5fb3b670c8b59a6124d9ff2.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">开放世界</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">养成</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">高自由度</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
+<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">168332</span></div>
+<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">原神</span></div>
+<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">3778.7万</span></div>
+<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">50.0万</span></div>
+<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">7.9</span><span style="color:#888"> / 10</span></div>
+<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">7.4</span></div>
+<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">7.5</span><span style="color:#888;font-size:13px"> (0.1万评价)</span></div>
+<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">miHoYo</span></div>
+<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">54.7万</span></div>
+<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-05-20</span></div>
+</div></div></div>
+<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,271</div><div class="change"><span class="down">▼7%</span></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,365</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">1,210</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,272</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame7"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame7').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "原神", "data": [1210, 1241, 1365, 1271], "borderColor": "#E91E63", "backgroundColor": "#E91E6330", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game8" class="page">
+<h2>明日方舟：终末地</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/20f852433d148f474fa775c9bbefd83c.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">模拟经营</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">冒险</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">科幻</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
+<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">232326</span></div>
+<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">明日方舟：终末地</span></div>
+<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">660.0万</span></div>
+<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">8.7万</span></div>
+<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">5.7</span><span style="color:#888"> / 10</span></div>
+<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">8.6</span></div>
+<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">7.9</span><span style="color:#888;font-size:13px"> (0.0万评价)</span></div>
+<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">鹰角开拓者</span></div>
+<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">16.7万</span></div>
+<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-04-17</span></div>
+</div></div></div>
+<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,231</div><div class="change"><span class="down">▼2%</span></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,253</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">400</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,010</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame8"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame8').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "明日方舟：终末地", "data": [400, 1154, 1253, 1231], "borderColor": "#00BCD4", "backgroundColor": "#00BCD430", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game9" class="page">
+<h2>明日方舟</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/2ea1a63c45fe294d36e29e348d441ea3.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">塔防</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">养成</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">美少女</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">策略</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
+<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">70253</span></div>
+<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">明日方舟</span></div>
+<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">1218.7万</span></div>
+<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">19.5万</span></div>
+<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">8.1</span><span style="color:#888"> / 10</span></div>
+<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">7.3</span></div>
+<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">7.5</span><span style="color:#888;font-size:13px"> (0.0万评价)</span></div>
+<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">鹰角网络</span></div>
+<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">5.5万</span></div>
+<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-05-01</span></div>
+</div></div></div>
+<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,176</div><div class="change"><span class="down">▼3%</span></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,211</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">1,107</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,159</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame9"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame9').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "明日方舟", "data": [1142, 1107, 1211, 1176], "borderColor": "#FF5722", "backgroundColor": "#FF572230", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game10" class="page">
+<h2>三角洲行动</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/24d6e0a99ef04d14177a4d82bc2a1802.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">搜打撤</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">生存</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">射击</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">动作</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
+<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">330259</span></div>
+<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">三角洲行动</span></div>
+<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">3011.9万</span></div>
+<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">4.5万</span></div>
+<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">5.3</span><span style="color:#888"> / 10</span></div>
+<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">5.5</span></div>
+<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">4.9</span><span style="color:#888;font-size:13px"> (0.1万评价)</span></div>
+<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">腾讯</span></div>
+<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">26.2万</span></div>
+<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-04-16</span></div>
+</div></div></div>
+<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,082</div><div class="change"><span class="down">▼7%</span></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,168</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">902</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,054</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame10"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame10').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "三角洲行动", "data": [902, 1062, 1168, 1082], "borderColor": "#9C27B0", "backgroundColor": "#9C27B030", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game11" class="page">
 <h2>燕云十六声</h2>
 <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
 <img src="https://img-tc.tapimg.com/market/images/515c6583cd5cb05f2f343e8b581df575.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
@@ -720,11 +638,93 @@ new Chart(document.getElementById('chartGame12').getContext('2d'), {
 <div class="stat-card"><div class="label">最低</div><div class="value">806</div></div>
 <div class="stat-card"><div class="label">平均</div><div class="value">863</div></div>
 </div>
+<div class="chart-wrap"><canvas id="chartGame11"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame11').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "燕云十六声", "data": [806, 838, 890, 917], "borderColor": "#3F51B5", "backgroundColor": "#3F51B530", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game12" class="page">
+<h2>心动小镇</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/49e4df26c2dd6c0604b7ccc52877b8fe.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">模拟经营</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">治愈</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">多人联机</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">建造</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
+<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">45213</span></div>
+<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">心动小镇</span></div>
+<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">3778.4万</span></div>
+<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">21.3万</span></div>
+<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">8.8</span><span style="color:#888"> / 10</span></div>
+<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">8.6</span></div>
+<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">8.4</span><span style="color:#888;font-size:13px"> (0.0万评价)</span></div>
+<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">心动</span></div>
+<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">28.7万</span></div>
+<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2026-04-08</span></div>
+</div></div></div>
+<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">910</div><div class="change"><span class="down">▼17%</span></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,092</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">910</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,009</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame12"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame12').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "心动小镇", "data": [986, 1049, 1092, 910], "borderColor": "#009688", "backgroundColor": "#00968830", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game13" class="page">
+<h2>伊瑟</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/0e9f5f40e951e813f257d20ef5a702b1.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display='none'">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">回合制</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">策略</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">养成</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">都市</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">
+<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">236627</span></div>
+<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">伊瑟</span></div>
+<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">260.1万</span></div>
+<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">1.2万</span></div>
+<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">7.6</span><span style="color:#888"> / 10</span></div>
+<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">8.0</span></div>
+<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">8.1</span><span style="color:#888;font-size:13px"> (0.0万评价)</span></div>
+<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">心动</span></div>
+<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">15.0万</span></div>
+<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">2025-11-06</span></div>
+</div></div></div>
+<p class="meta">4 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 17:00</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">818</div><div class="change"><span class="down">▼1%</span></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">830</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">800</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">815</div></div>
+</div>
 <div class="chart-wrap"><canvas id="chartGame13"></canvas></div>
 <script>
 new Chart(document.getElementById('chartGame13').getContext('2d'), {
     type: 'line',
-    data: { labels: timestamps, datasets: [{"label": "燕云十六声", "data": [806, 838, 890, 917], "borderColor": "#F44336", "backgroundColor": "#F4433630", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    data: { labels: timestamps, datasets: [{"label": "伊瑟", "data": [800, 813, 830, 818], "borderColor": "#F44336", "backgroundColor": "#F4433630", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
     options: {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },

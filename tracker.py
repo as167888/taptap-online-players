@@ -450,7 +450,7 @@ new Chart(document.getElementById('chartOverview').getContext('2d'), {{
 '''
 
     # ---- 每个游戏的独立页面 ----
-    for i, gname in enumerate(active_games):
+    for i, (gname, _) in enumerate(top_games):
         vals = series[gname]
         valid_vals = [v for v in vals if v is not None]
         cur = latest[gname]

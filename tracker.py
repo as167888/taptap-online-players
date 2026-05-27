@@ -547,8 +547,11 @@ function showPage(id) {{
 </script>
 
 <div class="footer" style="position:fixed;bottom:0;left:200px;right:0;text-align:center;padding:8px;background:#0f0f23;">
-最后更新: {timestamps[-1]} · 数据来源: api.taptapdada.com · TapTap 在线追踪器
+最后更新: {timestamps[-1]} · 数据来源: api.taptapdada.com · TapTap 在线追踪器 ·
+<span id="busuanzi_container_site_uv">访客 <span id="busuanzi_value_site_uv"></span> 人 · </span>
+<span id="busuanzi_container_site_pv">浏览 <span id="busuanzi_value_site_pv"></span> 次</span>
 </div>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>'''
 

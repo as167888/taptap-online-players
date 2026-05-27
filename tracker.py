@@ -185,11 +185,9 @@ def count_online(game_id):
 WEB_X_UA = 'V=1&PN=WebApp&LANG=zh_CN&VN_CODE=102&LOC=CN&PLT=PC&DS=Android&UID=d52ddf3e-6028-4fa4-ba5a-56d8a7bb4729&OS=Windows&OSV=10&DT=PC'
 
 def fetch_game_info(game_id):
-    """获取游戏详情 (评分/粉丝/下载等)"""
-    params = {'id': game_id, 'Identifier': f'auto_{game_id}', 'X-UA': WEB_X_UA}
-    headers = {'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}
-    resp = requests.get(f'https://{API_HOST}/app/v3/detail', params=params, headers=headers, timeout=15)
-    if resp.status_code != 200:
+    """获取游戏详情 (评分/粉丝/下载等) — 自动选择 pipe 或直连"""
+    resp = api_req(f'/app/v3/detail?Identifier=auto&id={game_id}')
+    if not resp or resp.status_code != 200:
         return None
     app = resp.json().get('data', {}).get('app', {})
     stat = app.get('stat', {})
@@ -231,11 +229,14 @@ def ensure_game_info():
     updated = False
     for gname, gid in GAMES:
         log(f'  更新游戏信息: {gname} (ID={gid})')
-        gi = fetch_game_info(gid)
-        if gi:
-            info[gid] = gi
-            updated = True
-            time.sleep(0.5)
+        try:
+            gi = fetch_game_info(gid)
+            if gi:
+                info[gid] = gi
+                updated = True
+        except Exception as e:
+            log(f'    获取失败: {e}')
+        time.sleep(0.5)
     if updated:
         save_game_info(info)
     log(f'  已更新 {len(info)} 款游戏信息')

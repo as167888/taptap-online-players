@@ -226,19 +226,19 @@ def save_game_info(info):
 
 
 def ensure_game_info():
-    """确保所有游戏信息已缓存"""
+    """刷新所有游戏基本信息（每次运行都更新）"""
     info = load_game_info()
     updated = False
     for gname, gid in GAMES:
-        if gid not in info or not info[gid].get('title'):
-            log(f'  获取游戏信息: {gname} (ID={gid})')
-            gi = fetch_game_info(gid)
-            if gi:
-                info[gid] = gi
-                updated = True
-                time.sleep(0.5)  # 避免请求过快
+        log(f'  更新游戏信息: {gname} (ID={gid})')
+        gi = fetch_game_info(gid)
+        if gi:
+            info[gid] = gi
+            updated = True
+            time.sleep(0.5)
     if updated:
         save_game_info(info)
+    log(f'  已更新 {len(info)} 款游戏信息')
     return info
 
 
@@ -259,17 +259,39 @@ def load_csv():
 
 
 def append_csv(timestamp, counts):
-    """追加一行数据"""
-    file_exists = CSV_FILE.exists()
-    with open(CSV_FILE, 'a', encoding='utf-8', newline='') as f:
-        fieldnames = ['time'] + [g[0] for g in GAMES]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        if not file_exists or CSV_FILE.stat().st_size == 0:
-            writer.writeheader()
+    """追加或更新本小时数据（取最大值）"""
+    # timestamp 格式: '2026-05-27 14:00' (精确到小时)
+    hour_key = timestamp[:13]  # '2026-05-27 14'
+    fieldnames = ['time'] + [g[0] for g in GAMES]
+
+    # 读取现有数据
+    rows = []
+    updated = False
+    if CSV_FILE.exists() and CSV_FILE.stat().st_size > 0:
+        with open(CSV_FILE, 'r', encoding='utf-8', newline='') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if row['time'][:13] == hour_key:
+                    # 同一小时：取最大值
+                    for gname in [g[0] for g in GAMES]:
+                        old_val = int(row[gname]) if row[gname] and row[gname].strip() else 0
+                        new_val = counts.get(gname, 0) or 0
+                        row[gname] = max(old_val, new_val)
+                    updated = True
+                rows.append(row)
+
+    if not updated:
+        # 新的一小时：追加
         row = {'time': timestamp}
-        for gname, gid in GAMES:
+        for gname in [g[0] for g in GAMES]:
             row[gname] = counts.get(gname, '')
-        writer.writerow(row)
+        rows.append(row)
+
+    # 写回
+    with open(CSV_FILE, 'w', encoding='utf-8', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 # ============================================================
@@ -578,12 +600,15 @@ def fetch_all():
 
     total_time = time.time() - start_time
 
-    # 保存 CSV
-    append_csv(datetime.now().strftime('%Y-%m-%d %H:%M'), counts)
-    log(f'CSV 已保存: {CSV_FILE}')
+    # 保存 CSV（精确到小时，同小时内多次运行取最大值）
+    now = datetime.now()
+    hour_ts = now.strftime('%Y-%m-%d %H:00')
+    append_csv(hour_ts, counts)
+    csv_rows = len(load_csv())
+    log(f'CSV 已保存: {CSV_FILE} (时间点: {hour_ts}, 共 {csv_rows} 行)')
 
-    # 刷新游戏信息缓存
-    log('更新游戏信息...')
+    # 每次运行都刷新游戏基本信息
+    log('更新游戏基本信息...')
     ensure_game_info()
 
     # 生成 HTML

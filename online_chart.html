@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TapTap 游戏在线人数追踪</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif; background:#1a1a2e; color:#eee; }
+.app { display:flex; height:100vh; }
+.sidebar { width:200px; background:#0f0f23; padding:12px 0; overflow-y:auto; flex-shrink:0; border-right:1px solid #2a2a4a; }
+.sidebar h3 { color:#666; font-size:12px; padding:8px 16px; text-transform:uppercase; letter-spacing:1px; }
+.sidebar button { display:block; width:100%; padding:10px 16px; border:none; background:none; color:#aaa; text-align:left; cursor:pointer; font-size:13px; transition:.2s; }
+.sidebar button:hover { background:#1a1a3e; color:#fff; }
+.sidebar button.active { background:#1a1a3e; color:#fff; border-left:3px solid #36A2EB; font-weight:600; }
+.main { flex:1; overflow-y:auto; padding:24px; }
+.main h2 { font-size:22px; margin-bottom:4px; }
+.main .meta { color:#888; font-size:12px; margin-bottom:20px; }
+.stats { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:10px; margin-bottom:20px; }
+.stat-card { background:#16213e; border-radius:8px; padding:14px; text-align:center; }
+.stat-card .label { font-size:11px; color:#888; }
+.stat-card .value { font-size:22px; font-weight:700; margin:4px 0; }
+.stat-card .change { font-size:11px; }
+.up { color:#4caf50; }
+.down { color:#f44336; }
+.flat { color:#666; }
+.chart-wrap { background:#16213e; border-radius:10px; padding:20px; }
+canvas { width:100%; max-height:420px; }
+.page { display:none; }
+.page.active { display:block; }
+.footer { text-align:center; color:#555; font-size:12px; margin-top:24px; }
+</style>
+</head>
+<body>
+<div class="app">
+<div class="sidebar">
+<h3>游戏列表</h3>
+<button class="active" onclick="showPage('overview')">总览</button>
+<button onclick="showPage('game0')">火炬之光：无限</button>
+<button onclick="showPage('game1')">异环</button>
+<button onclick="showPage('game2')">洛克王国：世界</button>
+<button onclick="showPage('game3')">超自然行动组</button>
+<button onclick="showPage('game4')">鸣潮</button>
+<button onclick="showPage('game5')">原神</button>
+<button onclick="showPage('game6')">和平精英</button>
+<button onclick="showPage('game7')">明日方舟</button>
+<button onclick="showPage('game8')">崩坏：星穹铁道</button>
+<button onclick="showPage('game9')">心动小镇</button>
+<button onclick="showPage('game10')">三角洲行动</button>
+<button onclick="showPage('game11')">燕云十六声</button>
+<button onclick="showPage('game12')">伊瑟</button>
+<button onclick="showPage('game13')">绝区零</button>
+<button onclick="showPage('game14')">明日方舟：终末地</button>
+<button onclick="showPage('game15')">幻塔</button>
+</div>
+<div class="main">
+<div id="page-overview" class="page active">
+<h2>全部游戏</h2>
+<p class="meta">数据范围: 2026-05-27 12:29 ~ 2026-05-27 12:29 | 1 个数据点</p>
+<div class="stats">
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game1')">
+<div class="label">火炬之光：无限</div>
+<div class="value">8,848</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game0')">
+<div class="label">异环</div>
+<div class="value">7,021</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game2')">
+<div class="label">洛克王国：世界</div>
+<div class="value">3,231</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game6')">
+<div class="label">超自然行动组</div>
+<div class="value">1,405</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game3')">
+<div class="label">鸣潮</div>
+<div class="value">1,334</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game5')">
+<div class="label">原神</div>
+<div class="value">1,210</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game8')">
+<div class="label">和平精英</div>
+<div class="value">1,154</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game11')">
+<div class="label">明日方舟</div>
+<div class="value">1,142</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game12')">
+<div class="label">崩坏：星穹铁道</div>
+<div class="value">1,068</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game4')">
+<div class="label">心动小镇</div>
+<div class="value">986</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game9')">
+<div class="label">三角洲行动</div>
+<div class="value">902</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game13')">
+<div class="label">燕云十六声</div>
+<div class="value">806</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game10')">
+<div class="label">伊瑟</div>
+<div class="value">800</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game14')">
+<div class="label">绝区零</div>
+<div class="value">776</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game7')">
+<div class="label">明日方舟：终末地</div>
+<div class="value">400</div>
+<div class="change"></div>
+</div>
+<div class="stat-card" style="cursor:pointer" onclick="showPage('game15')">
+<div class="label">幻塔</div>
+<div class="value">84</div>
+<div class="change"></div>
+</div>
+</div>
+<div class="chart-wrap"><canvas id="chartOverview"></canvas></div>
+</div>
+<script>
+const timestamps = ["2026-05-27 12:29"];
+const allSeries = {"异环": [7021], "火炬之光：无限": [8848], "洛克王国：世界": [3231], "鸣潮": [1334], "心动小镇": [986], "原神": [1210], "超自然行动组": [1405], "明日方舟：终末地": [400], "和平精英": [1154], "三角洲行动": [902], "伊瑟": [800], "明日方舟": [1142], "崩坏：星穹铁道": [1068], "燕云十六声": [806], "绝区零": [776], "幻塔": [84]};
+const allNames = ["异环", "火炬之光：无限", "洛克王国：世界", "鸣潮", "心动小镇", "原神", "超自然行动组", "明日方舟：终末地", "和平精英", "三角洲行动", "伊瑟", "明日方舟", "崩坏：星穹铁道", "燕云十六声", "绝区零", "幻塔"];
+const colors = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40", "#7CB342", "#E91E63", "#00BCD4", "#FF5722", "#9C27B0", "#3F51B5", "#009688", "#F44336", "#607D8B", "#CDDC39"];
+
+new Chart(document.getElementById('chartOverview').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "异环", "data": [7021], "borderColor": "#FF6384", "backgroundColor": "#FF638420", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "火炬之光：无限", "data": [8848], "borderColor": "#36A2EB", "backgroundColor": "#36A2EB20", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "洛克王国：世界", "data": [3231], "borderColor": "#FFCE56", "backgroundColor": "#FFCE5620", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "鸣潮", "data": [1334], "borderColor": "#4BC0C0", "backgroundColor": "#4BC0C020", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "心动小镇", "data": [986], "borderColor": "#9966FF", "backgroundColor": "#9966FF20", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "原神", "data": [1210], "borderColor": "#FF9F40", "backgroundColor": "#FF9F4020", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "超自然行动组", "data": [1405], "borderColor": "#7CB342", "backgroundColor": "#7CB34220", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "明日方舟：终末地", "data": [400], "borderColor": "#E91E63", "backgroundColor": "#E91E6320", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "和平精英", "data": [1154], "borderColor": "#00BCD4", "backgroundColor": "#00BCD420", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "三角洲行动", "data": [902], "borderColor": "#FF5722", "backgroundColor": "#FF572220", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "伊瑟", "data": [800], "borderColor": "#9C27B0", "backgroundColor": "#9C27B020", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "明日方舟", "data": [1142], "borderColor": "#3F51B5", "backgroundColor": "#3F51B520", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "崩坏：星穹铁道", "data": [1068], "borderColor": "#009688", "backgroundColor": "#00968820", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "燕云十六声", "data": [806], "borderColor": "#F44336", "backgroundColor": "#F4433620", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "绝区零", "data": [776], "borderColor": "#607D8B", "backgroundColor": "#607D8B20", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}, {"label": "幻塔", "data": [84], "borderColor": "#CDDC39", "backgroundColor": "#CDDC3920", "borderWidth": 1.5, "pointRadius": 1, "tension": 0.3, "fill": false}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: { legend: { position: 'bottom', labels: { color: '#ccc', usePointStyle: true, padding: 12, font: { size:11 } } } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+<div id="page-game0" class="page">
+<h2>异环</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/ec0bd50c4a0bafa60cde8d0f3775ee84.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">开放世界</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">都市</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">剧情</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px 16px;font-size:12px">
+<div><span style="color:#888">评分</span> <span style="color:#FFCE56;font-weight:600">7.0</span> / 10</div>
+<div><span style="color:#888">最新版本</span> 7.1</div>
+<div><span style="color:#888">粉丝</span> 8,332,621</div>
+<div><span style="color:#888">评价</span> 52,785</div>
+<div><span style="color:#888">PC下载</span> 932,585</div>
+<div><span style="color:#888">预约</span> 6,305,900</div>
+<div><span style="color:#888">愿望单</span> 23,893</div>
+<div><span style="color:#888">开发商</span> Hotta  Studio</div>
+<div><span style="color:#888">更新</span> 2026-04-21</div>
+</div></div></div>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">7,021</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">7,021</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">7,021</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">7,021</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame0"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame0').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "异环", "data": [7021], "borderColor": "#FF6384", "backgroundColor": "#FF638430", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game1" class="page">
+<h2>火炬之光：无限</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/a395edeea4e8c60315097a7472c7393c.jpg/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">ARPG</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">刷宝</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">高画质</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">冒险</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">动作</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px 16px;font-size:12px">
+<div><span style="color:#888">评分</span> <span style="color:#FFCE56;font-weight:600">7.3</span> / 10</div>
+<div><span style="color:#888">最新版本</span> 6.9</div>
+<div><span style="color:#888">粉丝</span> 3,651,156</div>
+<div><span style="color:#888">评价</span> 24,389</div>
+<div><span style="color:#888">PC下载</span> 820,062</div>
+<div><span style="color:#888">预约</span> 1,540,129</div>
+<div><span style="color:#888">愿望单</span> 452</div>
+<div><span style="color:#888">开发商</span> 心动</div>
+<div><span style="color:#888">更新</span> 2026-04-22</div>
+</div></div></div>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">8,848</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">8,848</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">8,848</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">8,848</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame1"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame1').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "火炬之光：无限", "data": [8848], "borderColor": "#36A2EB", "backgroundColor": "#36A2EB30", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game2" class="page">
+<h2>洛克王国：世界</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/27330daef3a3696edddd4a5e858f3d26.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">抓宠</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">回合制</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">养成</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">童年</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">宠物</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px 16px;font-size:12px">
+<div><span style="color:#888">评分</span> <span style="color:#FFCE56;font-weight:600">5.0</span> / 10</div>
+<div><span style="color:#888">最新版本</span> 4.1</div>
+<div><span style="color:#888">粉丝</span> 9,789,546</div>
+<div><span style="color:#888">评价</span> 71,660</div>
+<div><span style="color:#888">PC下载</span> 178,631</div>
+<div><span style="color:#888">预约</span> 3,904,669</div>
+<div><span style="color:#888">愿望单</span> 21,679</div>
+<div><span style="color:#888">开发商</span> 腾讯</div>
+<div><span style="color:#888">更新</span> 2026-05-21</div>
+</div></div></div>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">3,231</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">3,231</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">3,231</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">3,231</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame2"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame2').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "洛克王国：世界", "data": [3231], "borderColor": "#FFCE56", "backgroundColor": "#FFCE5630", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game3" class="page">
+<h2>鸣潮</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/197919623b5375c76349b897029ee19a.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">开放世界</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">动作</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">ARPG</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">冒险</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px 16px;font-size:12px">
+<div><span style="color:#888">评分</span> <span style="color:#FFCE56;font-weight:600">7.2</span> / 10</div>
+<div><span style="color:#888">最新版本</span> 5.8</div>
+<div><span style="color:#888">粉丝</span> 12,740,502</div>
+<div><span style="color:#888">评价</span> 148,064</div>
+<div><span style="color:#888">PC下载</span> 195,354</div>
+<div><span style="color:#888">预约</span> 4,399,316</div>
+<div><span style="color:#888">愿望单</span> 1,130</div>
+<div><span style="color:#888">开发商</span> 库洛游戏</div>
+<div><span style="color:#888">更新</span> 2026-05-19</div>
+</div></div></div>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,334</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,334</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">1,334</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,334</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame3"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame3').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "鸣潮", "data": [1334], "borderColor": "#4BC0C0", "backgroundColor": "#4BC0C030", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game4" class="page">
+<h2>心动小镇</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/49e4df26c2dd6c0604b7ccc52877b8fe.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">模拟经营</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">治愈</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">多人联机</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">建造</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px 16px;font-size:12px">
+<div><span style="color:#888">评分</span> <span style="color:#FFCE56;font-weight:600">8.8</span> / 10</div>
+<div><span style="color:#888">最新版本</span> 8.5</div>
+<div><span style="color:#888">粉丝</span> 37,783,035</div>
+<div><span style="color:#888">评价</span> 213,103</div>
+<div><span style="color:#888">PC下载</span> 287,291</div>
+<div><span style="color:#888">预约</span> 2,404,392</div>
+<div><span style="color:#888">愿望单</span> 4,296</div>
+<div><span style="color:#888">开发商</span> 心动</div>
+<div><span style="color:#888">更新</span> 2026-04-08</div>
+</div></div></div>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">986</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">986</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">986</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">986</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame4"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame4').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "心动小镇", "data": [986], "borderColor": "#9966FF", "backgroundColor": "#9966FF30", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game5" class="page">
+<h2>原神</h2>
+<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">
+<img src="https://img-tc.tapimg.com/market/images/4c441769b5fb3b670c8b59a6124d9ff2.png/_tap_appicon_m.jpg" style="width:64px;height:64px;border-radius:12px;flex-shrink:0">
+<div style="flex:1">
+<div style="font-size:13px;color:#aaa;margin-bottom:6px"><span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">开放世界</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">二次元</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">角色扮演</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">养成</span> <span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">高自由度</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px 16px;font-size:12px">
+<div><span style="color:#888">评分</span> <span style="color:#FFCE56;font-weight:600">7.9</span> / 10</div>
+<div><span style="color:#888">最新版本</span> 7.5</div>
+<div><span style="color:#888">粉丝</span> 37,786,157</div>
+<div><span style="color:#888">评价</span> 500,381</div>
+<div><span style="color:#888">PC下载</span> 546,508</div>
+<div><span style="color:#888">预约</span> 3,115,210</div>
+<div><span style="color:#888">愿望单</span> 1,105</div>
+<div><span style="color:#888">开发商</span> miHoYo</div>
+<div><span style="color:#888">更新</span> 2026-05-20</div>
+</div></div></div>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,210</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,210</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">1,210</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,210</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame5"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame5').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "原神", "data": [1210], "borderColor": "#FF9F40", "backgroundColor": "#FF9F4030", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game6" class="page">
+<h2>超自然行动组</h2>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,405</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,405</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">1,405</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,405</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame6"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame6').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "超自然行动组", "data": [1405], "borderColor": "#7CB342", "backgroundColor": "#7CB34230", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game7" class="page">
+<h2>明日方舟：终末地</h2>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">400</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">400</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">400</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">400</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame7"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame7').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "明日方舟：终末地", "data": [400], "borderColor": "#E91E63", "backgroundColor": "#E91E6330", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game8" class="page">
+<h2>和平精英</h2>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,154</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,154</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">1,154</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,154</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame8"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame8').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "和平精英", "data": [1154], "borderColor": "#00BCD4", "backgroundColor": "#00BCD430", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game9" class="page">
+<h2>三角洲行动</h2>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">902</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">902</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">902</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">902</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame9"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame9').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "三角洲行动", "data": [902], "borderColor": "#FF5722", "backgroundColor": "#FF572230", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game10" class="page">
+<h2>伊瑟</h2>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">800</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">800</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">800</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">800</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame10"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame10').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "伊瑟", "data": [800], "borderColor": "#9C27B0", "backgroundColor": "#9C27B030", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game11" class="page">
+<h2>明日方舟</h2>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,142</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,142</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">1,142</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,142</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame11"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame11').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "明日方舟", "data": [1142], "borderColor": "#3F51B5", "backgroundColor": "#3F51B530", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game12" class="page">
+<h2>崩坏：星穹铁道</h2>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">1,068</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">1,068</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">1,068</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">1,068</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame12"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame12').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "崩坏：星穹铁道", "data": [1068], "borderColor": "#009688", "backgroundColor": "#00968830", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game13" class="page">
+<h2>燕云十六声</h2>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">806</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">806</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">806</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">806</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame13"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame13').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "燕云十六声", "data": [806], "borderColor": "#F44336", "backgroundColor": "#F4433630", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game14" class="page">
+<h2>绝区零</h2>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">776</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">776</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">776</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">776</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame14"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame14').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "绝区零", "data": [776], "borderColor": "#607D8B", "backgroundColor": "#607D8B30", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+<div id="page-game15" class="page">
+<h2>幻塔</h2>
+<p class="meta">1 个数据点 | 2026-05-27 12:29 ~ 2026-05-27 12:29</p>
+<div class="stats">
+<div class="stat-card"><div class="label">当前在线</div><div class="value">84</div><div class="change"></div></div>
+<div class="stat-card"><div class="label">最高</div><div class="value">84</div></div>
+<div class="stat-card"><div class="label">最低</div><div class="value">84</div></div>
+<div class="stat-card"><div class="label">平均</div><div class="value">84</div></div>
+</div>
+<div class="chart-wrap"><canvas id="chartGame15"></canvas></div>
+<script>
+new Chart(document.getElementById('chartGame15').getContext('2d'), {
+    type: 'line',
+    data: { labels: timestamps, datasets: [{"label": "幻塔", "data": [84], "borderColor": "#CDDC39", "backgroundColor": "#CDDC3930", "borderWidth": 2, "pointRadius": 3, "pointHoverRadius": 5, "tension": 0.3, "fill": true}] },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+            x: { ticks: { color: '#888', maxTicksLimit: 20, maxRotation: 45 } },
+            y: { ticks: { color: '#888', callback: v => v>=1000 ? (v/1000).toFixed(1)+'k' : v } }
+        }
+    }
+});
+</script>
+</div>
+</div>
+</div>
+
+<script>
+function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.sidebar button').forEach(b => b.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+
+<div class="footer" style="position:fixed;bottom:0;left:200px;right:0;text-align:center;padding:8px;background:#0f0f23;">
+最后更新: 2026-05-27 12:29 · 数据来源: api.taptapdada.com · TapTap 在线追踪器
+</div>
+</body>
+</html>

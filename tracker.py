@@ -28,6 +28,7 @@ SCRIPT_DIR = Path(__file__).parent
 CSV_FILE = SCRIPT_DIR / "online_history.csv"
 HTML_FILE = SCRIPT_DIR / "online_chart.html"
 LOG_FILE = SCRIPT_DIR / "tracker.log"
+GAME_INFO_FILE = SCRIPT_DIR / "game_info.json"
 
 KID = os.environ.get('TAPTAP_KID', '')
 MAC_KEY = os.environ.get('TAPTAP_MAC_KEY', '')
@@ -178,6 +179,70 @@ def count_online(game_id):
 
 
 # ============================================================
+# 游戏信息缓存
+# ============================================================
+
+WEB_X_UA = 'V=1&PN=WebApp&LANG=zh_CN&VN_CODE=102&LOC=CN&PLT=PC&DS=Android&UID=d52ddf3e-6028-4fa4-ba5a-56d8a7bb4729&OS=Windows&OSV=10&DT=PC'
+
+def fetch_game_info(game_id):
+    """获取游戏详情 (评分/粉丝/下载等)"""
+    params = {'id': game_id, 'Identifier': f'auto_{game_id}', 'X-UA': WEB_X_UA}
+    headers = {'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}
+    resp = requests.get(f'https://{API_HOST}/app/v3/detail', params=params, headers=headers, timeout=15)
+    if resp.status_code != 200:
+        return None
+    app = resp.json().get('data', {}).get('app', {})
+    stat = app.get('stat', {})
+    devs = app.get('developers', [])
+    return {
+        'title': app.get('title', ''),
+        'identifier': app.get('identifier', ''),
+        'update_date': app.get('update_date', ''),
+        'score': stat.get('rating', {}).get('score', ''),
+        'latest_score': stat.get('rating', {}).get('latest_score', ''),
+        'fans_count': stat.get('fans_count', 0),
+        'reserve_count': stat.get('reserve_count', 0),
+        'review_count': stat.get('review_count', 0),
+        'pc_download_count': stat.get('pc_download_count', 0),
+        'hits_total': stat.get('hits_total', 0),
+        'wish_count': stat.get('wish_count', 0),
+        'tags': [t.get('value', '') for t in app.get('tags', [])],
+        'developer': devs[0].get('name', '') if devs else '',
+        'icon_url': app.get('icon', {}).get('medium_url', ''),
+    }
+
+
+def load_game_info():
+    """加载游戏信息缓存"""
+    if GAME_INFO_FILE.exists():
+        with open(GAME_INFO_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+
+def save_game_info(info):
+    with open(GAME_INFO_FILE, 'w', encoding='utf-8') as f:
+        json.dump(info, f, ensure_ascii=False, indent=2)
+
+
+def ensure_game_info():
+    """确保所有游戏信息已缓存"""
+    info = load_game_info()
+    updated = False
+    for gname, gid in GAMES:
+        if gid not in info or not info[gid].get('title'):
+            log(f'  获取游戏信息: {gname} (ID={gid})')
+            gi = fetch_game_info(gid)
+            if gi:
+                info[gid] = gi
+                updated = True
+                time.sleep(0.5)  # 避免请求过快
+    if updated:
+        save_game_info(info)
+    return info
+
+
+# ============================================================
 # CSV 操作
 # ============================================================
 
@@ -214,6 +279,7 @@ def append_csv(timestamp, counts):
 def generate_html():
     """从 CSV 生成可视化 HTML — 标签页切换各游戏"""
     rows = load_csv()
+    game_info = load_game_info()
     if not rows:
         log("CSV 为空，无法生成图表")
         return
@@ -381,6 +447,30 @@ new Chart(document.getElementById('chartOverview').getContext('2d'), {{
 
         html += f'<div id="page-game{i}" class="page">\n'
         html += f'<h2>{gname}</h2>\n'
+
+        # 游戏基础信息
+        gid = dict(GAMES).get(gname, '')
+        gi = game_info.get(str(gid), {}) if gid else {}
+        if gi:
+            tags_html = ' '.join(f'<span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">{t}</span>' for t in gi.get('tags', [])[:5])
+            html += '<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">\n'
+            if gi.get('icon_url'):
+                html += f'<img src="{gi["icon_url"]}" style="width:64px;height:64px;border-radius:12px;flex-shrink:0">\n'
+            html += '<div style="flex:1">\n'
+            html += f'<div style="font-size:13px;color:#aaa;margin-bottom:6px">{tags_html}</div>\n'
+            html += '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px 16px;font-size:12px">\n'
+            html += f'<div><span style="color:#888">评分</span> <span style="color:#FFCE56;font-weight:600">{gi.get("score","?")}</span> / 10</div>\n'
+            html += f'<div><span style="color:#888">最新版本</span> {gi.get("latest_score","?")}</div>\n'
+            html += f'<div><span style="color:#888">粉丝</span> {gi.get("fans_count",0):,}</div>\n'
+            html += f'<div><span style="color:#888">评价</span> {gi.get("review_count",0):,}</div>\n'
+            html += f'<div><span style="color:#888">PC下载</span> {gi.get("pc_download_count",0):,}</div>\n'
+            html += f'<div><span style="color:#888">预约</span> {gi.get("reserve_count",0):,}</div>\n'
+            html += f'<div><span style="color:#888">愿望单</span> {gi.get("wish_count",0):,}</div>\n'
+            html += f'<div><span style="color:#888">开发商</span> {gi.get("developer","?")}</div>\n'
+            if gi.get('update_date'):
+                html += f'<div><span style="color:#888">更新</span> {gi["update_date"]}</div>\n'
+            html += '</div></div></div>\n'
+
         html += f'<p class="meta">{len(timestamps)} 个数据点 | {timestamps[0]} ~ {timestamps[-1]}</p>\n'
 
         html += '<div class="stats">\n'
@@ -485,6 +575,10 @@ def fetch_all():
     # 保存 CSV
     append_csv(datetime.now().strftime('%Y-%m-%d %H:%M'), counts)
     log(f'CSV 已保存: {CSV_FILE}')
+
+    # 刷新游戏信息缓存
+    log('更新游戏信息...')
+    ensure_game_info()
 
     # 生成 HTML
     generate_html()

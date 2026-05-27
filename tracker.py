@@ -617,8 +617,24 @@ def fetch_all():
     log(f'完成! 成功 {success}/{len(GAMES)}, 失败 {fail}, 总耗时 {total_time:.0f}s')
 
 
+def git_push():
+    """推送更新到 GitHub"""
+    import subprocess
+    files = [CSV_FILE, HTML_FILE, GAME_INFO_FILE, LOG_FILE]
+    existing = [str(f) for f in files if f.exists()]
+    subprocess.run(['git', 'add'] + existing, cwd=str(SCRIPT_DIR), capture_output=True)
+    r = subprocess.run(['git', 'commit', '-m', f'auto: {datetime.now().strftime("%Y-%m-%d %H:%M")} 更新数据'], cwd=str(SCRIPT_DIR), capture_output=True)
+    if r.returncode == 0:
+        subprocess.run(['git', 'push'], cwd=str(SCRIPT_DIR), capture_output=True)
+        log('已推送到 GitHub')
+    else:
+        log('无变更，跳过推送')
+
+
 def main():
     global API_MODE
+    deploy = '--deploy' in sys.argv
+
     if '--pipe' in sys.argv:
         API_MODE = 'pipe'
     elif '--direct' in sys.argv:
@@ -629,8 +645,13 @@ def main():
     if '--html-only' in sys.argv:
         log('仅生成 HTML')
         generate_html()
-    else:
-        fetch_all()
+        if deploy:
+            git_push()
+        return
+
+    fetch_all()
+    if deploy:
+        git_push()
 
 
 if __name__ == '__main__':

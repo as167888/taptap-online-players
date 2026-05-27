@@ -477,7 +477,7 @@ new Chart(document.getElementById('chartOverview').getContext('2d'), {{
             tags_html = ' '.join(f'<span style="display:inline-block;background:#1a1a3e;padding:2px 8px;border-radius:3px;font-size:11px;margin:2px">{t}</span>' for t in gi.get('tags', [])[:5])
             html += '<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:16px;background:#16213e;border-radius:8px;padding:16px">\n'
             if gi.get('icon_url'):
-                html += f'<img src="{gi["icon_url"]}" style="width:64px;height:64px;border-radius:12px;flex-shrink:0">\n'
+                html += f'<img src="{gi["icon_url"]}" style="width:64px;height:64px;border-radius:12px;flex-shrink:0" referrerpolicy="no-referrer" onerror="this.style.display=\'none\'">\n'
             html += '<div style="flex:1">\n'
             html += f'<div style="font-size:13px;color:#aaa;margin-bottom:6px">{tags_html}</div>\n'
             fans_wan = gi.get('fans_count', 0) / 10000

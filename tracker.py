@@ -30,8 +30,8 @@ HTML_FILE = SCRIPT_DIR / "online_chart.html"
 LOG_FILE = SCRIPT_DIR / "tracker.log"
 GAME_INFO_FILE = SCRIPT_DIR / "game_info.json"
 
-KID = os.environ.get('TAPTAP_KID', '')
-MAC_KEY = os.environ.get('TAPTAP_MAC_KEY', '')
+KID = os.environ.get('TAPTAP_KID', 'CG5uaCTyrJBn9QBopp3plUuN2WE6dlGVbj22j3zm')
+MAC_KEY = os.environ.get('TAPTAP_MAC_KEY', 'CZ5uaCTytoWFIi4JuzhYXUb3gIcCHtz8gm4uXmBu')
 API_HOST = 'api.taptapdada.com'
 X_UA = 'V=1&PN=TapPC&VN=2026.5.19-rel.5&VN_CODE=2026051905&CH=organic-direct_index_d20260425--260425ayD0RBcx9pod&OS=windows&OSV=10.0.26200&LANG=zh_CN&UID=2802356a81894c5dae8768bc07c5e29d&SR=1920x1080&VID=658693348'
 X_UA_ENC = urllib.parse.quote(X_UA, safe='')

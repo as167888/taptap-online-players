@@ -459,19 +459,22 @@ new Chart(document.getElementById('chartOverview').getContext('2d'), {{
             html += '<div style="flex:1">\n'
             html += f'<div style="font-size:13px;color:#aaa;margin-bottom:6px">{tags_html}</div>\n'
             fans_wan = gi.get('fans_count', 0) / 10000
-            html += '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px 16px;font-size:12px">\n'
-            html += f'<div><span style="color:#888">游戏 ID</span> {gid}</div>\n'
-            html += f'<div><span style="color:#888">游戏名称</span> {gi.get("title",gname)}</div>\n'
-            html += f'<div><span style="color:#888">粉丝数</span> {fans_wan:.1f}万</div>\n'
-            html += f'<div><span style="color:#888">评价总数</span> {gi.get("review_count",0):,}</div>\n'
-            html += f'<div><span style="color:#888">当前评分</span> <span style="color:#FFCE56;font-weight:600">{gi.get("score","?")}</span> / 10</div>\n'
-            html += f'<div><span style="color:#888">最新版本评分</span> {gi.get("latest_version_score","?")}</div>\n'
-            html += f'<div><span style="color:#888">最近 7 天评分</span> {gi.get("latest_score","?")} ({gi.get("latest_review_count",0):,}评价)</div>\n'
-            html += f'<div><span style="color:#888">开发商</span> {gi.get("developer","?")}</div>\n'
+            review_wan = gi.get('review_count', 0) / 10000
+            pc_dl_wan = gi.get('pc_download_count', 0) / 10000
+            latest_rev_wan = gi.get('latest_review_count', 0) / 10000
+            html += '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px 16px;font-size:13px">\n'
+            html += f'<div><span style="color:#888;font-size:11px">游戏 ID</span><br><span style="font-size:22px;font-weight:700">{gid}</span></div>\n'
+            html += f'<div><span style="color:#888;font-size:11px">游戏名称</span><br><span style="font-size:22px;font-weight:700">{gi.get("title",gname)}</span></div>\n'
+            html += f'<div><span style="color:#888;font-size:11px">粉丝数</span><br><span style="font-size:22px;font-weight:700">{fans_wan:.1f}万</span></div>\n'
+            html += f'<div><span style="color:#888;font-size:11px">评价总数</span><br><span style="font-size:22px;font-weight:700">{review_wan:.1f}万</span></div>\n'
+            html += f'<div><span style="color:#888;font-size:11px">当前评分</span><br><span style="color:#FFCE56;font-size:22px;font-weight:700">{gi.get("score","?")}</span><span style="color:#888"> / 10</span></div>\n'
+            html += f'<div><span style="color:#888;font-size:11px">最新版本评分</span><br><span style="font-size:22px;font-weight:700">{gi.get("latest_version_score","?")}</span></div>\n'
+            html += f'<div><span style="color:#888;font-size:11px">最近 7 天评分</span><br><span style="font-size:22px;font-weight:700">{gi.get("latest_score","?")}</span><span style="color:#888;font-size:13px"> ({latest_rev_wan:.1f}万评价)</span></div>\n'
+            html += f'<div><span style="color:#888;font-size:11px">开发商</span><br><span style="font-size:22px;font-weight:700">{gi.get("developer","?")}</span></div>\n'
+            if pc_dl_wan > 0:
+                html += f'<div><span style="color:#888;font-size:11px">PC下载</span><br><span style="font-size:22px;font-weight:700">{pc_dl_wan:.1f}万</span></div>\n'
             if gi.get('update_date'):
-                html += f'<div><span style="color:#888">更新日期</span> {gi["update_date"]}</div>\n'
-            if gi.get('pc_download_count', 0) > 0:
-                html += f'<div><span style="color:#888">PC下载</span> {gi.get("pc_download_count",0):,}</div>\n'
+                html += f'<div><span style="color:#888;font-size:11px">更新日期</span><br><span style="font-size:22px;font-weight:700">{gi["update_date"]}</span></div>\n'
             html += '</div></div></div>\n'
 
         html += f'<p class="meta">{len(timestamps)} 个数据点 | {timestamps[0]} ~ {timestamps[-1]}</p>\n'

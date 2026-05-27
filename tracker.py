@@ -25,10 +25,13 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='repla
 # 配置
 # ============================================================
 SCRIPT_DIR = Path(__file__).parent
+OUTPUT_DIR = SCRIPT_DIR / "output"
 CSV_FILE = SCRIPT_DIR / "online_history.csv"
 HTML_FILE = SCRIPT_DIR / "online_chart.html"
 LOG_FILE = SCRIPT_DIR / "tracker.log"
 GAME_INFO_FILE = SCRIPT_DIR / "game_info.json"
+
+OUTPUT_DIR.mkdir(exist_ok=True)
 
 KID = os.environ.get('TAPTAP_KID', 'CG5uaCTyrJBn9QBopp3plUuN2WE6dlGVbj22j3zm')
 MAC_KEY = os.environ.get('TAPTAP_MAC_KEY', 'CZ5uaCTytoWFIi4JuzhYXUb3gIcCHtz8gm4uXmBu')
@@ -570,9 +573,18 @@ function showPage(id) {{
 </body>
 </html>'''
 
+    # 保存到根目录（GitHub Pages 固定 URL）
     with open(HTML_FILE, 'w', encoding='utf-8') as f:
         f.write(html)
+
+    # 同时保存带时间戳的副本到 output/
+    ts_file = datetime.now().strftime('%Y-%m-%d_%H-%M') + '_online_chart.html'
+    ts_path = OUTPUT_DIR / ts_file
+    with open(ts_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+
     log(f'HTML 已生成: {HTML_FILE}')
+    log(f'归档副本:    {ts_path}')
 
 
 # ============================================================
@@ -639,7 +651,7 @@ def fetch_all():
 def git_push():
     """推送更新到 GitHub"""
     import subprocess
-    files = [CSV_FILE, HTML_FILE, GAME_INFO_FILE, LOG_FILE]
+    files = [CSV_FILE, HTML_FILE, GAME_INFO_FILE, LOG_FILE, OUTPUT_DIR]
     existing = [str(f) for f in files if f.exists()]
     subprocess.run(['git', 'add'] + existing, cwd=str(SCRIPT_DIR), capture_output=True)
     r = subprocess.run(['git', 'commit', '-m', f'auto: {datetime.now().strftime("%Y-%m-%d %H:%M")} 更新数据'], cwd=str(SCRIPT_DIR), capture_output=True)

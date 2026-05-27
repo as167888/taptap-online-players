@@ -452,7 +452,7 @@ new Chart(document.getElementById('chartOverview').getContext('2d'), {{
     data: {{ labels: timestamps, datasets: {json.dumps(datasets_overview, ensure_ascii=False)} }},
     options: {{
         responsive: true, maintainAspectRatio: false,
-        interaction: {{ mode: 'index', intersect: false }},
+        interaction: {{ mode: 'nearest', intersect: false, axis: 'x' }},
         plugins: {{ legend: {{ position: 'bottom', labels: {{ color: '#ccc', usePointStyle: true, padding: 12, font: {{ size:11 }} }} }} }},
         scales: {{
             x: {{ ticks: {{ color: '#888', maxTicksLimit: 20, maxRotation: 45 }} }},
@@ -536,6 +536,7 @@ new Chart(document.getElementById('chartGame{i}').getContext('2d'), {{
     data: {{ labels: timestamps, datasets: {json.dumps(ds, ensure_ascii=False)} }},
     options: {{
         responsive: true, maintainAspectRatio: false,
+        interaction: {{ mode: 'nearest', intersect: false, axis: 'x' }},
         plugins: {{ legend: {{ display: false }} }},
         scales: {{
             x: {{ ticks: {{ color: '#888', maxTicksLimit: 20, maxRotation: 45 }} }},

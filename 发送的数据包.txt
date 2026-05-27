@@ -1,0 +1,7 @@
+GET /group/v1/online-players?X-UA=V%3D1%26PN%3DTapPC%26VN%3D2026.5.19-rel.5%26VN_CODE%3D2026051905%26CH%3Dorganic-direct_index_d20260425--260425ayD0RBcx9pod%26OS%3Dwindows%26OSV%3D10.0.26200%26LANG%3Dzh_CN%26UID%3D2802356a81894c5dae8768bc07c5e29d%26SR%3D1920x1080%26VID%3D658693348&app_id=172664&from=0&limit=20 HTTP/2
+Host: api.taptapdada.com
+Accept: application/json, text/plain, */*
+User-Agent: TapTap/2026.5.19-rel.5 (Build 2026051905/1d8a57a6) TapPC-Main/2026.5.19-rel.5
+Authorization: MAC id="CG5uaCTyrJBn9QBopp3plUuN2WE6dlGVbj22j3zm",ts="1779847745",nonce="uSngSwCZ",mac="0JnFO3R8g0ILUHIcYNNM6AaB6nU="
+Accept-Encoding: gzip, deflate, br
+

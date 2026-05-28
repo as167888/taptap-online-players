@@ -166,10 +166,11 @@ def api_req(full_path):
 
 
 def count_online(game_id):
-    """精确计数（翻页到底）"""
-    current_path = f'/group/v1/online-players?app_id={game_id}&from=0&limit=50'
+    """精确计数 — 通过 dw_offset 绕过缓存限制，跟随服务端偏移量"""
+    import re
     total = 0
     page = 0
+    current_path = f'/group/v1/online-players?app_id={game_id}&dw_offset=0&limit=50'
     while current_path and page < 500:
         page += 1
         resp = api_req(current_path)
@@ -185,13 +186,17 @@ def count_online(game_id):
         if not lst:
             break
         total += len(lst)
+        if page <= 3 or page % 30 == 0:
+            log(f'    第{page}页: +{len(lst)} = {total} 累计')
         if not next_url:
             break
-        next_path = next_url.replace(f'https://{API_HOST}', '')
-        current_path = f'{next_path}'
+        # 提取 dw_offset 构造干净 URL（不带 from 参数，否则触发缓存限制）
+        m = re.search(r'dw_offset=(\d+)', next_url)
+        if m:
+            current_path = f'/group/v1/online-players?app_id={game_id}&dw_offset={m.group(1)}&limit=50'
+        else:
+            break
         time.sleep(REQUEST_DELAY)
-        if page % 30 == 0 or page == 1:
-            log(f'    第{page}页: +{len(lst)} = {total} 累计')
     return total
 
 
@@ -403,6 +408,10 @@ canvas {{ width:100%; max-height:420px; }}
 
     html += '''</div>
 <div class="main">
+<div style="background:#332200;border:1px solid #664400;border-radius:8px;padding:12px 16px;margin-bottom:20px;color:#ffaa00;font-size:13px;line-height:1.6">
+<strong>⚠ 接口受限通知</strong>（2026-05-28）<br>
+TapTap 服务端已对在线玩家接口实施封锁，正在调试中。
+</div>
 '''
 
     # ---- 总览页面 ----
@@ -412,8 +421,7 @@ canvas {{ width:100%; max-height:420px; }}
 
     # 总览卡片
     html += '<div class="stats">\n'
-    for gname, count in top_games:
-        i = active_games.index(gname)
+    for i, (gname, count) in enumerate(top_games):
         change_html = ''
         if count is not None and prev[gname] is not None and prev[gname] > 0:
             pct = (count - prev[gname]) / prev[gname] * 100

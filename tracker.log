@@ -2820,3 +2820,62 @@
 [2026-05-28 20:55:21] 仅生成 HTML
 [2026-05-28 20:55:21] HTML 已生成: E:\project\taptappczhuabao\online_chart.html
 [2026-05-28 20:55:21] 归档副本:    E:\project\taptappczhuabao\output\2026-05-28_20-55_online_chart.html
+[2026-05-28 21:13:41]     第1页: +50 = 50 累计
+[2026-05-28 21:13:42]     第2页: +50 = 100 累计
+[2026-05-28 21:13:43]     第3页: +23 = 123 累计
+[2026-05-28 21:17:30]     第1页: page_count=9, cumulative=9
+[2026-05-28 21:17:32]     第2页: page_count=0, cumulative=9
+[2026-05-28 21:17:32]     第2页全超出5分钟窗口，停止翻页
+[2026-05-28 21:17:34]     第1页: page_count=14, cumulative=14
+[2026-05-28 21:17:36]     第2页: page_count=1, cumulative=15
+[2026-05-28 21:17:37]     第3页: page_count=1, cumulative=16
+[2026-05-28 21:17:38]     第4页全超出10分钟窗口，停止翻页
+[2026-05-28 21:17:40]     第1页: page_count=14, cumulative=14
+[2026-05-28 21:17:41]     第2页: page_count=1, cumulative=15
+[2026-05-28 21:17:42]     第3页: page_count=1, cumulative=16
+[2026-05-28 21:17:43]     第4页全超出15分钟窗口，停止翻页
+[2026-05-28 21:17:45]     第1页: page_count=18, cumulative=18
+[2026-05-28 21:17:46]     第2页: page_count=2, cumulative=20
+[2026-05-28 21:17:48]     第3页: page_count=1, cumulative=21
+[2026-05-28 21:17:50]     第4页全超出30分钟窗口，停止翻页
+[2026-05-28 21:17:52]     第1页: page_count=26, cumulative=26
+[2026-05-28 21:17:53]     第2页: page_count=4, cumulative=30
+[2026-05-28 21:17:54]     第3页: page_count=1, cumulative=31
+[2026-05-28 21:17:55]     第4页全超出60分钟窗口，停止翻页
+[2026-05-28 21:17:58]     第1页: page_count=49, cumulative=49
+[2026-05-28 21:17:58]     第2页: page_count=47, cumulative=96
+[2026-05-28 21:18:00]     第3页: page_count=42, cumulative=138
+[2026-05-28 21:18:06]     第10页: page_count=41, cumulative=441
+[2026-05-28 21:18:17]     第20页: page_count=44, cumulative=871
+[2026-05-28 21:18:26]     第30页: page_count=40, cumulative=1330
+[2026-05-28 21:18:36]     第40页: page_count=5, cumulative=1749
+[2026-05-28 21:18:38]     第1页: page_count=50, cumulative=50
+[2026-05-28 21:18:39]     第2页: page_count=49, cumulative=99
+[2026-05-28 21:18:40]     第3页: page_count=50, cumulative=149
+[2026-05-28 21:18:46]     第10页: page_count=50, cumulative=499
+[2026-05-28 21:18:55]     第20页: page_count=50, cumulative=998
+[2026-05-28 21:19:05]     第30页: page_count=50, cumulative=1498
+[2026-05-28 21:19:16]     第1页: page_count=50, cumulative=50
+[2026-05-28 21:19:17]     第2页: page_count=49, cumulative=99
+[2026-05-28 21:19:18]     第3页: page_count=50, cumulative=149
+[2026-05-28 21:19:25]     第10页: page_count=50, cumulative=499
+[2026-05-28 21:19:34]     第20页: page_count=50, cumulative=999
+[2026-05-28 21:19:44]     第30页: page_count=50, cumulative=1499
+[2026-05-28 21:19:54]     第1页: page_count=50, cumulative=50
+[2026-05-28 21:19:55]     第2页: page_count=49, cumulative=99
+[2026-05-28 21:19:56]     第3页: page_count=50, cumulative=149
+[2026-05-28 21:20:03]     第10页: page_count=50, cumulative=499
+[2026-05-28 21:20:12]     第20页: page_count=50, cumulative=999
+[2026-05-28 21:20:24]     第30页: page_count=50, cumulative=1499
+[2026-05-28 21:21:19]     第1页: +14 = 14 累计
+[2026-05-28 21:21:20]     第2页: +0 = 14 累计
+[2026-05-28 21:21:21]     第1页: +50 = 50 累计
+[2026-05-28 21:21:22]     第2页: +49 = 99 累计
+[2026-05-28 21:21:23]     第3页: +50 = 149 累计
+[2026-05-28 21:21:50]     第30页: +50 = 1499 累计
+[2026-05-28 21:22:00]     第1页: +50 = 50 累计
+[2026-05-28 21:22:01]     第2页: +49 = 99 累计
+[2026-05-28 21:22:02]     第3页: +48 = 147 累计
+[2026-05-28 22:48:35] 仅生成 HTML
+[2026-05-28 22:48:35] HTML 已生成: E:\project\taptappczhuabao\online_chart.html
+[2026-05-28 22:48:35] 归档副本:    E:\project\taptappczhuabao\output\2026-05-28_22-48_online_chart.html

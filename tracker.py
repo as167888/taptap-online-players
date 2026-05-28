@@ -14,7 +14,7 @@ TapTap 游戏在线人数追踪器
   schtasks /create /tn TapTapTracker /tr "python tracker.py" /sc hourly
 """
 
-import os, sys, io, json, csv, time, hmac, hashlib, base64, random, string
+import os, sys, io, json, csv, time, hmac, hashlib, base64, random, string, re
 import urllib.parse, requests
 from pathlib import Path
 from datetime import datetime, timedelta
@@ -40,6 +40,7 @@ X_UA = 'V=1&PN=TapPC&VN=2026.5.19-rel.5&VN_CODE=2026051905&CH=organic-direct_ind
 X_UA_ENC = urllib.parse.quote(X_UA, safe='')
 
 REQUEST_DELAY = 0.8  # 每个请求间隔，避免限流
+ONLINE_WINDOW = 15 * 60  # 在线判定窗口（秒）：最近 N 秒内有活动才算在线
 
 # 日志
 def log(msg):
@@ -107,7 +108,7 @@ def api_req_direct(full_path):
     return _get_direct_session().get(f'https://{API_HOST}{fp}', headers=headers, timeout=15)
 
 
-PIPE_PATH = '\\\\.\\pipe\\tappc_cn_http'
+PIPE_PATH = '//./pipe/tappc_cn_http'
 
 def pipe_exists():
     try:
@@ -166,8 +167,21 @@ def api_req(full_path):
 
 
 def count_online(game_id):
-    """精确计数 — 通过 dw_offset 绕过缓存限制，跟随服务端偏移量"""
-    import re
+    """统计在线人数 — 先尝试 from=0&limit=6 拿精确 total，≥100 则走 dw_offset + 时间窗口"""
+    now = int(time.time())
+    threshold = now - ONLINE_WINDOW
+
+    # 策略 A: 模拟客户端请求 (from=0&limit=6)，直接取 total 字段
+    resp = api_req(f'/group/v1/online-players?app_id={game_id}&from=0&limit=6')
+    if resp and resp.status_code == 200:
+        data = resp.json()
+        server_total = data.get('data', {}).get('total', 0)
+        if server_total < 100:
+            log(f'    精确值: {server_total} 人 (total < 100)')
+            return server_total
+
+    # 策略 B: total ≥ 100，走 dw_offset + 时间窗口翻页
+    log(f'    total≥100，开始翻页统计 (窗口={ONLINE_WINDOW//60}分钟)...')
     total = 0
     page = 0
     current_path = f'/group/v1/online-players?app_id={game_id}&dw_offset=0&limit=50'
@@ -176,7 +190,6 @@ def count_online(game_id):
         resp = api_req(current_path)
         if not resp or resp.status_code != 200:
             if page == 1:
-                log(f'    第1页失败 (HTTP {resp.status_code if resp else "no response"})')
                 return None
             log(f'    第{page}页中断')
             break
@@ -185,12 +198,14 @@ def count_online(game_id):
         next_url = data.get('data', {}).get('next_page', '')
         if not lst:
             break
-        total += len(lst)
+        page_count = sum(1 for p in lst if p.get('last_played_time', 0) >= threshold)
+        total += page_count
         if page <= 3 or page % 30 == 0:
-            log(f'    第{page}页: +{len(lst)} = {total} 累计')
+            log(f'    第{page}页: +{page_count} = {total} 累计')
+        if page_count == 0:
+            break
         if not next_url:
             break
-        # 提取 dw_offset 构造干净 URL（不带 from 参数，否则触发缓存限制）
         m = re.search(r'dw_offset=(\d+)', next_url)
         if m:
             current_path = f'/group/v1/online-players?app_id={game_id}&dw_offset={m.group(1)}&limit=50'

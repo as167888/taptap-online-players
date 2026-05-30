@@ -1,6 +1,5 @@
+﻿scan_logs/
+online_chain.csv
+online_chain.html
 __pycache__/
 *.pyc
-.env
-config*.json
-*.asar
-captures_from_desktop/
